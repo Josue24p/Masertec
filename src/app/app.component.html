@@ -1,5 +1,22 @@
-<h1>hola mundo</h1>
-<h2>Probando</h2>
+<div class="top-bar d-flex justify-content-between align-items-center px-4 py-2">
+  <div class="social-icons-left d-flex">
+    <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="mx-2"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="mx-2"><i class="fab fa-youtube"></i></a>
+  </div>
+  
+  <div class="logo">
+    MASERTEC
+  </div>
+  
+  <div class="social-icons-right d-flex">
+    <a href="#" class="mx-2"><i class="fas fa-heart"></i></a>
+  </div>
+</div>
+
+<div class="banner-container">
+  <img src="https://masertecperu.com/imagenes/banner.png" alt="Banner" class="banner-image">
+</div>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -7,7 +24,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a [routerLink]="['/']" class="nav-link ">Home</a>
         <a [routerLink]="['/servicios']" class="nav-link" >Servicios</a>
@@ -20,5 +37,59 @@
     </div>
   </div>
 </nav>
+<div class="container my-5">
+  <div class="grid-container">
+    <!-- Carta 1 -->
+    <div class="card grid-item grid-item--large">
+      <img src="https://masertecperu.com/imagenes/banner.png" class="card-img-top" alt="Fotochecks">
+      <div class="card-body">
+        <h5 class="card-title">Fotochecks</h5>
+        <p class="card-text">Nuestro servicio de impresión de fotochecks incluye la elaboración del diseño y sesión fotográfica al personal en sus propias instalaciones sin costo adicional.</p>
+        <a href="#" class="btn btn-danger">Más info</a>
+      </div>
+    </div>
+
+    <!-- Carta 2 -->
+    <div class="card grid-item">
+      <img src="https://masertecperu.com/imagenes/banner.png" class="card-img-top" alt="Accesorios">
+      <div class="card-body">
+        <h5 class="card-title">Accesorios</h5>
+        <p class="card-text">Contamos con una gama diversa de accesorios de fotochecks tales como portafotochecks, cintas, micas, yoyos retractiles...</p>
+        <a href="#" class="btn btn-danger">Más info</a>
+      </div>
+    </div>
+
+    <!-- Carta 3 -->
+    <div class="card grid-item">
+      <img src="https://masertecperu.com/imagenes/banner.png" class="card-img-top" alt="Sistema">
+      <div class="card-body">
+        <h5 class="card-title">Sistema</h5>
+        <p class="card-text">SACOP ha sido desarrollado para brindar un efectivo control sobre la asistencia de su personal.</p>
+        <a href="#" class="btn btn-danger">Más info</a>
+      </div>
+    </div>
+
+    <!-- Carta 4 -->
+    <div class="card grid-item grid-item--large">
+      <img src="https://masertecperu.com/imagenes/banner.png" class="card-img-top" alt="Productos">
+      <div class="card-body">
+        <h5 class="card-title">Productos</h5>
+        <p class="card-text">Ofrecemos productos de calidad para su empresa satisfaciendo las necesidades que usted requiere...</p>
+        <a href="#" class="btn btn-danger">Más info</a>
+      </div>
+    </div>
+
+    <!-- Carta 5 -->
+    <div class="card grid-item grid-item--medium">
+      <img src="https://masertecperu.com/imagenes/banner.png" class="card-img-top" alt="Servicio Técnico">
+      <div class="card-body">
+        <h5 class="card-title">Servicio Técnico</h5>
+        <p class="card-text">Nuestro equipo de servicio técnico está conformado por ingenieros y técnicos a su disposición.</p>
+        <a href="#" class="btn btn-danger">Más info</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <router-outlet></router-outlet>

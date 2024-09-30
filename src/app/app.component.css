@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para que el padding no se sume al ancho */
+  }
+.top-bar {
+    background-color: #f8d8d8; /* Color de fondo similar al que tienes */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Color del texto "DULCEFINA" */
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .social-icons-left,
+  .social-icons-right {
+    display: flex;
+  }
+  
+  .social-icons-left a,
+  .social-icons-right a {
+    color: #fff; /* Color de los íconos */
+    font-size: 20px; /* Tamaño de los íconos */
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .social-icons-left a:hover,
+  .social-icons-right a:hover {
+    color: #ff69b4; /* Cambia el color al hacer hover */
+  }
+  
+  @media (max-width: 768px) {
+    .top-bar {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .logo {
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Imagen que ocupa todo el ancho */
+.banner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+/* Imagen que ocupa todo el ancho sin desbordar */
+.banner-container {
+    width: 100%;
+    overflow-x: hidden; /* Evitar desbordamiento */
+  }
+  
+  .banner-image {
+    width: 100%;        /* Ocupa el 100% del ancho de su contenedor */
+    height: auto;       /* Mantiene la proporción de la imagen */
+    max-width: 100vw;   /* Se asegura de que no supere el ancho de la ventana */
+    object-fit: cover;  /* La imagen se ajusta al contenedor cubriéndolo */
+  }
+  
+  nav.navbar {
+    margin-top: 0;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-gap: 20px;
+  }
+  
+  .grid-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .grid-item--large {
+    grid-column: span 2; /* Ocupa dos columnas de ancho */
+  }
+  
+  .grid-item--medium {
+    grid-row: span 2; /* Ocupa dos filas de alto */
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px; /* Controla la altura de las imágenes */
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .btn-danger {
+    background-color: #FF6600; /* Color naranja en el botón */
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #cc5200; /* Un poco más oscuro al pasar el mouse */
+  }
+  

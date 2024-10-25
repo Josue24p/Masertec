@@ -1,0 +1,60 @@
+.navbar{
+  margin: 0px 10px;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 15px; /* Espacio entre enlaces */
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  color: #333; /* Color de texto */
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff; /* Color de texto en hover */
+  background-color: #85b9f0; /* Color de fondo en hover */
+  text-decoration: none; /* Quita subrayado */
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff; /* Color para enlace activo */
+  background-color: #629ad6; /* Fondo para enlace activo */
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link:not(:last-child)::after {
+  content: "|"; /* Separador */
+  margin-left: 10px;
+  color: #ccc; /* Color del separador */
+}
+
+/*ANIMACIÓN PARA EL HEAD*/
+.head {
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #333; /* Fondo opcional */
+  padding: 10px;
+}
+
+.head p {
+  display: inline-block;
+  color: #fff; /* Color de texto */
+  font-size: 1.2rem;
+  padding-right: 0%; /* Espacio adicional al final del texto */
+  animation: scrollText 8 s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); /* Empieza fuera de la vista, a la derecha */
+  }
+  100% {
+    transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
+  }
+}

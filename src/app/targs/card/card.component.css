@@ -1,0 +1,38 @@
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 400px;
+  margin: 16px auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin: 16px 0;
+  color: #333;
+  text-align: center;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  padding: 0 16px 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.card-content {
+  padding: 16px;
+}

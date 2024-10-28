@@ -110,3 +110,11 @@
     transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
   }
 }
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+  margin: 0;
+  padding: 0;
+}

@@ -1,120 +1,108 @@
-.navbar{
-  margin: 0px 10px;
-}
-
-.navbar-nav {
-  display: flex;
-  gap: 15px; /* Espacio entre enlaces */
-  align-items: center;
-}
-
-.navbar-nav .nav-link {
-  color: #333; /* Color de texto */
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #ffffff; /* Color de texto en hover */
-  background-color: #85b9f0; /* Color de fondo en hover */
-  text-decoration: none; /* Quita subrayado */
-}
-
-.navbar-nav .nav-link.active {
-  color: #ffffff; /* Color para enlace activo */
-  background-color: #629ad6; /* Fondo para enlace activo */
-  font-weight: 600;
-}
-
-.navbar-nav .nav-link:not(:last-child)::after {
-  content: "|"; /* Separador */
-  margin-left: 10px;
-  color: #ccc; /* Color del separador */
-}
-
-/*ANIMACIÓN PARA EL HEAD*/
-.head {
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #333; /* Fondo opcional */
-  padding: 10px;
-}
-
-.head p {
-  display: inline-block;
-  color: #fff; /* Color de texto */
-  font-size: 1.2rem;
-  padding-right: 0%; /* Espacio adicional al final del texto */
-  animation: scrollText 8 s linear infinite;
-}
-
-@keyframes scrollText {
-  0% {
-    transform: translateX(100%); /* Empieza fuera de la vista, a la derecha */
-  }
-  100% {
-    transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
-  }
-}
-.navbar{
-  margin: 0px 10px;
-}
-.navbar-nav {
-  display: flex;
-  gap: 15px; /* Espacio entre enlaces */
-  align-items: center;
-}
-.navbar-nav .nav-link {
-  color: #333; /* Color de texto */
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-.navbar-nav .nav-link:hover {
-  color: #ffffff; /* Color de texto en hover */
-  background-color: #85b9f0; /* Color de fondo en hover */
-  text-decoration: none; /* Quita subrayado */
-}
-.navbar-nav .nav-link.active {
-  color: #ffffff; /* Color para enlace activo */
-  background-color: #629ad6; /* Fondo para enlace activo */
-  font-weight: 600;
-}
-.navbar-nav .nav-link:not(:last-child)::after {
-  content: "|"; /* Separador */
-  margin-left: 10px;
-  color: #ccc; /* Color del separador */
-}
-/*ANIMACIÓN PARA EL HEAD*/
-.head {
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #333; /* Fondo opcional */
-  padding: 10px;
-}
-.head p {
-  display: inline-block;
-  color: #fff; /* Color de texto */
-  font-size: 1.2rem;
-  padding-right: 0%; /* Espacio adicional al final del texto */
-  animation: scrollText 8 s linear infinite;
-}
-@keyframes scrollText {
-  0% {
-    transform: translateX(100%); /* Empieza fuera de la vista, a la derecha */
-  }
-  100% {
-    transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
-  }
-}
-.banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+/* Estilos generales para el cuerpo de la página */
+body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo para el header con la animación del texto desplazándose */
+.head {
+  overflow: hidden;
+  background-color: #333;
+  padding: 12px 0;
+}
+
+.head p {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2rem;
+  animation: scrollText 10s linear infinite;
+}
+
+/* Animación que desplaza el texto de derecha a izquierda */
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* Estilos para la barra de navegación (Navbar) */
+.navbar {
+  margin: 0 10px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los enlaces de la barra de navegación */
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Estilo de los enlaces dentro de la barra de navegación */
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto cuando se pasa el mouse sobre un enlace */
+.navbar-nav .nav-link:hover {
+  color: #fff;
+  background-color: #877d7d;
+  text-decoration: none;
+}
+
+/* Estilo para el enlace activo (cuando está seleccionado) */
+.navbar-nav .nav-link.active {
+  background-color: #ffffff;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Estilo para los separadores entre enlaces */
+.navbar-nav .nav-link:not(:last-child)::after {
+  content: '|';
+  margin-left: 10px;
+  color: #bbb;
+}
+
+/* Estilo del botón de la barra de navegación en pantallas pequeñas */
+.navbar-toggler {
+  border-color: #878181;
+}
+
+/* Estilo del icono del menú en el botón de la barra de navegación */
+.navbar-toggler-icon {
+  background-color: #333;
+}
+
+/* Estilos para la barra de navegación en modo oscuro */
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #fff;
+  background-color: #737373;
+}
+
+/* Media query para dispositivos pequeños (pantallas móviles) */
+@media (max-width: 767px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 20px;
+  }
 }

@@ -1,120 +1,112 @@
-.navbar{
-  margin: 0px 10px;
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
-.navbar-nav {
-  display: flex;
-  gap: 15px; /* Espacio entre enlaces */
-  align-items: center;
-}
-
-.navbar-nav .nav-link {
-  color: #333; /* Color de texto */
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #ffffff; /* Color de texto en hover */
-  background-color: #85b9f0; /* Color de fondo en hover */
-  text-decoration: none; /* Quita subrayado */
-}
-
-.navbar-nav .nav-link.active {
-  color: #ffffff; /* Color para enlace activo */
-  background-color: #629ad6; /* Fondo para enlace activo */
-  font-weight: 600;
-}
-
-.navbar-nav .nav-link:not(:last-child)::after {
-  content: "|"; /* Separador */
-  margin-left: 10px;
-  color: #ccc; /* Color del separador */
-}
-
-/*ANIMACIÓN PARA EL HEAD*/
+/* Encabezado */
 .head {
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #333; /* Fondo opcional */
-  padding: 10px;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5rem;
 }
 
-.head p {
-  display: inline-block;
-  color: #fff; /* Color de texto */
-  font-size: 1.2rem;
-  padding-right: 0%; /* Espacio adicional al final del texto */
-  animation: scrollText 8 s linear infinite;
+.company-name {
+  margin: 0;
+  font-weight: bold;
 }
 
-@keyframes scrollText {
-  0% {
-    transform: translateX(100%); /* Empieza fuera de la vista, a la derecha */
-  }
-  100% {
-    transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
-  }
-}
-.navbar{
-  margin: 0px 10px;
-}
-.navbar-nav {
-  display: flex;
-  gap: 15px; /* Espacio entre enlaces */
-  align-items: center;
-}
-.navbar-nav .nav-link {
-  color: #333; /* Color de texto */
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-.navbar-nav .nav-link:hover {
-  color: #ffffff; /* Color de texto en hover */
-  background-color: #85b9f0; /* Color de fondo en hover */
-  text-decoration: none; /* Quita subrayado */
-}
-.navbar-nav .nav-link.active {
-  color: #ffffff; /* Color para enlace activo */
-  background-color: #629ad6; /* Fondo para enlace activo */
-  font-weight: 600;
-}
-.navbar-nav .nav-link:not(:last-child)::after {
-  content: "|"; /* Separador */
-  margin-left: 10px;
-  color: #ccc; /* Color del separador */
-}
-/*ANIMACIÓN PARA EL HEAD*/
-.head {
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #333; /* Fondo opcional */
-  padding: 10px;
-}
-.head p {
-  display: inline-block;
-  color: #fff; /* Color de texto */
-  font-size: 1.2rem;
-  padding-right: 0%; /* Espacio adicional al final del texto */
-  animation: scrollText 8 s linear infinite;
-}
-@keyframes scrollText {
-  0% {
-    transform: translateX(100%); /* Empieza fuera de la vista, a la derecha */
-  }
-  100% {
-    transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
-  }
-}
+/* Banner de la empresa */
 .banner-img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
   margin: 0;
-  padding: 0;
+}
+
+/* Logo de la empresa */
+.logo-img {
+  width: 120px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+/* Estilo de la barra de navegación */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.navbar .navbar-toggler-icon {
+  background-color: #2c3e50;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #3498db;
+  text-decoration: none;
+}
+
+/* Barra de navegación responsive */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  .logo-img {
+    width: 100px;
+  }
+}
+
+
+/* Contenedor fluido para el contenido */
+.container-fluid {
+  padding: 0 15px;
+}
+
+/* Media query para pantall*/
+/* Aseguramos que el body y html ocupen toda la altura de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal de la aplicación */
+router-outlet {
+  flex-grow: 1; /* Esto hace que el contenido se expanda para llenar el espacio disponible */
 }

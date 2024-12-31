@@ -9,34 +9,29 @@
 }
 
 .card:hover {
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(-4px); /* Efecto de elevación al hacer hover */
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .card h2 {
   font-size: 1.5rem;
+  margin: 16px 0;
   color: #333;
   text-align: center;
-  margin: 16px 0;
-  font-weight: bold;
 }
 
 .card p {
   font-size: 1rem;
   color: #666;
-  padding: 0 16px;
+  padding: 0 16px 16px;
   line-height: 1.6;
   text-align: justify;
 }
-
 
 .card-content {
   padding: 16px;

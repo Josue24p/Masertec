@@ -24,11 +24,21 @@
   display: flex;
   justify-content: space-around; /* Espacio alrededor de los cards */
   flex-wrap: wrap; /* Permite que los cards se ajusten en pantallas más pequeñas */
+  flex-direction: row;
   margin: 16px; /* Espaciado alrededor del contenedor */
+  border: 2px dashed red; /* Borde temporal para visualizar el tamaño */
 }
 
-.app-card {
-  flex: 1 1 30%; /* Crece para ocupar 30% del ancho del contenedor */
-  margin: 10px; /* Espacio entre los cards */
-  min-width: 250px; /* Ancho mínimo para evitar que se vean muy pequeños */
+.cont-card app-card {
+  border: 2px dashed blue !important; /* Usa !important para forzar el estilo si es necesario */
+  display: flex; /* Asegúrate de que sea un elemento renderizado en bloque */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total */
+  margin: 10px;
+  padding: 8px; /* Agrega algo de espacio interno para ver el borde más claramente */
+  width: 15%;
+  object-fit: cover; /* Ajusta la imagen para que se recorte de forma proporcional */
+  border-radius: 8px; /* Opcional: esquinas redondeadas */
 }
+
+
+

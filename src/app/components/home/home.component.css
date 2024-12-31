@@ -1,13 +1,15 @@
+/* Estilo general de la tarjeta principal */
 .card {
   display: flex;
   flex-direction: row;
-  background-color: rgb(0, 0, 0);
-  margin: 0px 20px;
-  border-radius: 8px;
+  background-color: #282c34;
+  margin: 20px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajuste de la imagen para que ocupe todo el ancho */
+/* Imagen de la tarjeta principal */
 .cont-img {
   flex: 0.5;
   width: 100%;
@@ -17,31 +19,58 @@
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover; /* Para que la imagen llene el contenedor sin distorsionarse */
+  object-fit: cover;
 }
+
+/* Texto dentro de la tarjeta principal */
 .cont-text {
   flex: 1;
-  width: 100%;
-  margin: 0;
   padding: 20px;
   color: white;
   text-align: center;
 }
+.cont-text .highlight-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+  line-height: 1.5;
+}
 
+/* Contenedor de las tarjetas pequeñas */
 .cont-card {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 16px; /* Ajusta el espacio entre tarjetas */
-  padding: 16px;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
 }
 
-
+/* Tarjetas pequeñas */
 .app-card {
-  flex: 1 1 30%; /* Crece para ocupar 30% del ancho del contenedor */
-  margin: 10px; /* Espacio entre los cards */
-  min-width: 250px; /* Ancho mínimo para evitar que se vean muy pequeños */
+  flex: 1 1 calc(25% - 20px); /* Ajusta el ancho de las tarjetas */
+  margin: 10px;
+  min-width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+.app-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste de la imagen en las tarjetas pequeñas */
+.app-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
   .card {
@@ -50,5 +79,9 @@
 
   .cont-img, .cont-text {
     width: 100%;
+  }
+
+  .app-card {
+    flex: 1 1 calc(50% - 20px);
   }
 }

@@ -1,69 +1,37 @@
-/* Estilo general del footer */
+/* Estilos generales para el footer */
 .footer {
-  background-color: #004b87; /* Color primario de la barra de navegación */
-  color: white;
-  position: relative; /* Necesario si el footer se coloca al final */
-  padding: 20px 0; /* Espaciado alrededor del contenido */
-  margin-top: auto; /* Para que se empuje hacia abajo cuando el contenido es poco */
-}
-
-/* Ajustes para el contenedor de contenido de la página */
-body, html {
-  height: 100%; /* Necesario para asegurar que ocupen toda la altura */
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex-grow: 1; /* Esto empuja el footer hacia abajo */
-}
-
-/* Estilos para el contenido del footer */
-.footer-content p {
-  margin-bottom: 15px;
-}
-
-.footer-links {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #ffdd57; /* Un color dorado para el hover */
-}
-
-/* Media query para ajustar el footer en pantallas pequeñas */
-@media (max-width: 768px) {
-  .footer-content p {
-    margin-bottom: 10px;
-  }
-  .footer-links {
-    margin-top: 10px;
-  }
-}
-/* Estilo general del footer */
-.footer {
-  background-color: #004b87; /* Color primario de la barra de navegación */
+  background-color: #333;
   color: white;
   padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
-.footer-content p {
-  margin-bottom: 15px;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .footer-links {
-  padding: 0;
-  margin: 0;
   list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-links li {
+  margin: 5px 10px;
 }
 
 .footer-links a {
@@ -73,15 +41,31 @@ main {
 }
 
 .footer-links a:hover {
-  color: #ffdd57; /* Un color dorado para el hover */
+  color: #3498db;
 }
 
-/* Media query para ajustar el footer en pantallas pequeñas */
+/* Estilos responsivos */
 @media (max-width: 768px) {
-  .footer-content p {
-    margin-bottom: 10px;
+  .footer p {
+    font-size: 0.9rem;
   }
+
   .footer-links {
-    margin-top: 10px;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footer-links li {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer p {
+    font-size: 0.8rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
   }
 }

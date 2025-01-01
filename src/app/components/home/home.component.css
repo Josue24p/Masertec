@@ -1,44 +1,76 @@
 .card {
+
   display: flex;
   flex-direction: row;
-  background-color: rgb(0, 0, 0);
-  margin: 0px 20px 0px 20px;
+  background-color: #333;
+  margin: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra para destacar la tarjeta */
 }
-
 .cont-img {
   flex: 0.5;
-  width: 45%; /* Puedes ajustar el tamaño de los divs según tus necesidades */
-  background-color: lightblue;
+  width: 40%;
+  ;
+  background-color: #333;
   margin: 10px;
 }
 
 .cont-text {
   flex: 1;
   width: 45%;
-  background-color: lightblue;
+  background-color: #333;
   margin: 10px;
   padding: 10px;
 }
 
-.cont-card{
+/* Color del texto en el título h5 (MASERTEC SAC) */
+.card .card-title {
+  color: #ec740b !important; /* Naranja oscuro como fuego */
+  text-align: center;
+}
+
+/* Color del texto en el párrafo p (Descripción) */
+p {
+  margin: 50px;
+  color: #fff82e !important; /* Gris oscuro */
+  text-align: justify;
+  font-weight: bold; /* Negrita */
+  font-family: 'Arial', sans-serif; /* Fuente más moderna y legible */
+}
+
+/* Contenedor de múltiples tarjetas */
+.cont-card {
   display: flex;
-  justify-content: space-around; /* Espacio alrededor de los cards */
-  flex-wrap: wrap; /* Permite que los cards se ajusten en pantallas más pequeñas */
-  flex-direction: row;
-  margin: 16px; /* Espaciado alrededor del contenedor */
-  border: 2px dashed red; /* Borde temporal para visualizar el tamaño */
+  justify-content: space-between; /* Distribuye las tarjetas de manera equitativa */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten al tamaño de la pantalla */
+  margin: 16px;
 }
 
+/* Cada tarjeta dentro del contenedor */
 .cont-card app-card {
-  border: 2px dashed blue !important; /* Usa !important para forzar el estilo si es necesario */
-  display: flex; /* Asegúrate de que sea un elemento renderizado en bloque */
-  box-sizing: border-box; /* Incluye el borde en el tamaño total */
+  display: flex;
+  box-sizing: border-box;
   margin: 10px;
-  padding: 8px; /* Agrega algo de espacio interno para ver el borde más claramente */
-  width: 15%;
-  object-fit: cover; /* Ajusta la imagen para que se recorte de forma proporcional */
-  border-radius: 8px; /* Opcional: esquinas redondeadas */
+  padding: 8px;
+  width: 18%; /* Ajusta el ancho de cada tarjeta a un 18% */
+  max-width: 250px; /* Asegura que no se expandan demasiado */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 
+/* En pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  .cont-card app-card {
+    width: 48%; /* Las tarjetas ocuparán un 48% del ancho */
+  }
+}
+
+/* En pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  .cont-card app-card {
+    width: 100%; /* Las tarjetas ocuparán el 100% del ancho */
+  }
+}
 

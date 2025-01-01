@@ -1,112 +1,90 @@
-.navbar{
-  margin: 0px 10px;
-}
-
-.navbar-nav {
+/* Estilo general de la tarjeta */
+.card {
   display: flex;
-  gap: 15px; /* Espacio entre enlaces */
-  align-items: center;
+  flex-direction: row;
+  background-color: #2c3e50; /* Fondo color oscuro */
+  margin: 0px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-nav .nav-link {
-  color: #333; /* Color de texto */
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+/* Contenedor de la imagen dentro de la tarjeta */
+.cont-img {
+  flex: 0.5;
+  width: 45%;
+  background-color: #34495e; /* Fondo un poco más claro para diferenciar */
+  margin: 10px;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #ffffff; /* Color de texto en hover */
-  background-color: #85b9f0; /* Color de fondo en hover */
-  text-decoration: none; /* Quita subrayado */
+.cont-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.navbar-nav .nav-link.active {
-  color: #ffffff; /* Color para enlace activo */
-  background-color: #629ad6; /* Fondo para enlace activo */
-  font-weight: 600;
+/* Contenedor de texto dentro de la tarjeta */
+.cont-text {
+  flex: 1;
+  width: 50%;
+  background-color: #34495e; /* Fondo un poco más claro para diferenciar */
+  margin: 10px;
+  padding: 15px;
 }
 
-.navbar-nav .nav-link:not(:last-child)::after {
-  content: "|"; /* Separador */
-  margin-left: 10px;
-  color: #ccc; /* Color del separador */
+/* Título en la tarjeta principal */
+.cont-text .card-title {
+  color: #ecf0f1; /* Título en color claro para resaltar */
+  font-size: 2rem; /* Título más grande */
+  font-weight: bold;
+  text-align: center; /* Alineación centrada */
 }
 
-/*ANIMACIÓN PARA EL HEAD*/
-.head {
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #333; /* Fondo opcional */
-  padding: 10px;
+/* Texto dentro de la tarjeta */
+.cont-text .card-text {
+  color: #ecf0f1; /* Texto en color claro */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 10px;
 }
 
-.head p {
-  display: inline-block;
-  color: #fff; /* Color de texto */
-  font-size: 1.2rem;
-  padding-right: 0%; /* Espacio adicional al final del texto */
-  animation: scrollText 8 s linear infinite;
-}
-
-@keyframes scrollText {
-  0% {
-    transform: translateX(100%); /* Empieza fuera de la vista, a la derecha */
-  }
-  100% {
-    transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
-  }
-}
-.navbar{
-  margin: 0px 10px;
-}
-.navbar-nav {
+/* Estilo para el contenedor de múltiples tarjetas */
+.cont-card {
   display: flex;
-  gap: 15px; /* Espacio entre enlaces */
-  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 16px;
 }
-.navbar-nav .nav-link {
-  color: #333; /* Color de texto */
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+
+/* Estilo para cada tarjeta dentro del contenedor */
+.cont-card app-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 8px;
+  width: 22%;
+  background-color: #2c3e50; /* Fondo oscuro */
+  color: #ecf0f1; /* Texto blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  border-radius: 8px;
 }
-.navbar-nav .nav-link:hover {
-  color: #ffffff; /* Color de texto en hover */
-  background-color: #85b9f0; /* Color de fondo en hover */
-  text-decoration: none; /* Quita subrayado */
+
+.cont-card app-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
-.navbar-nav .nav-link.active {
-  color: #ffffff; /* Color para enlace activo */
-  background-color: #629ad6; /* Fondo para enlace activo */
-  font-weight: 600;
-}
-.navbar-nav .nav-link:not(:last-child)::after {
-  content: "|"; /* Separador */
-  margin-left: 10px;
-  color: #ccc; /* Color del separador */
-}
-/*ANIMACIÓN PARA EL HEAD*/
-.head {
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #333; /* Fondo opcional */
-  padding: 10px;
-}
-.head p {
-  display: inline-block;
-  color: #fff; /* Color de texto */
+
+.cont-card app-card h5 {
   font-size: 1.2rem;
-  padding-right: 0%; /* Espacio adicional al final del texto */
-  animation: scrollText 8 s linear infinite;
+  font-weight: bold;
+  margin-top: 10px;
+
 }
-@keyframes scrollText {
-  0% {
-    transform: translateX(100%); /* Empieza fuera de la vista, a la derecha */
-  }
-  100% {
-    transform: translateX(-100%); /* Termina fuera de la vista, a la izquierda */
-  }
+
+.cont-card app-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ecf0f1; /* Texto blanco */
 }

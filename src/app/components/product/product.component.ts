@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
+import { TarjetaComponent } from '../tarjeta/tarjeta.component';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [TarjetaComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })

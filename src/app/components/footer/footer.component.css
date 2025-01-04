@@ -1,14 +1,17 @@
 /* Estilos generales para el footer */
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #333;
   color: white;
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
   font-size: 0.9rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  z-index: 10;
 }
+
 
 .footer-content {
   max-width: 1200px;

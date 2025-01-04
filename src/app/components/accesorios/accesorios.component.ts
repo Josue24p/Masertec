@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
+import { TarjetaComponent } from '../tarjeta/tarjeta.component';
 @Component({
   selector: 'app-accesorios',
   standalone: true,
-  imports: [],
+  imports: [TarjetaComponent],
   templateUrl: './accesorios.component.html',
   styleUrl: './accesorios.component.css'
 })

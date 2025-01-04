@@ -28,11 +28,11 @@
 
 /* Color del texto en el párrafo p (Descripción) */
 p {
-  color: #fff82e !important; /* Gris oscuro */
+  color: #fff !important; /* Gris oscuro */
   text-align: justify;
   font-weight: bold; /* Negrita */
   font-family: 'Arial', sans-serif; /* Fuente más moderna y legible */
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 /* Contenedor de múltiples tarjetas */

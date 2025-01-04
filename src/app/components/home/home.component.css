@@ -1,27 +1,23 @@
 .card {
-
   display: flex;
   flex-direction: row;
   background-color: #333;
-  margin: 20px;
+  margin: 30px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra para destacar la tarjeta */
 }
 .cont-img {
   flex: 0.5;
-  width: 40%;
-  ;
   background-color: #333;
   margin: 10px;
 }
 
 .cont-text {
   flex: 1;
-  width: 45%;
   background-color: #333;
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
 }
 
 /* Color del texto en el título h5 (MASERTEC SAC) */
@@ -32,11 +28,11 @@
 
 /* Color del texto en el párrafo p (Descripción) */
 p {
-  margin: 50px;
   color: #fff82e !important; /* Gris oscuro */
   text-align: justify;
   font-weight: bold; /* Negrita */
   font-family: 'Arial', sans-serif; /* Fuente más moderna y legible */
+  font-size: 1.5em;
 }
 
 /* Contenedor de múltiples tarjetas */
@@ -44,26 +40,46 @@ p {
   display: flex;
   justify-content: space-between; /* Distribuye las tarjetas de manera equitativa */
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten al tamaño de la pantalla */
-  margin: 16px;
 }
 
 /* Cada tarjeta dentro del contenedor */
 .cont-card app-card {
   display: flex;
   box-sizing: border-box;
-  margin: 10px;
+  margin: 0 20px 30px 20px;
   padding: 8px;
-  width: 18%; /* Ajusta el ancho de cada tarjeta a un 18% */
-  max-width: 250px; /* Asegura que no se expandan demasiado */
-  object-fit: cover;
-  border-radius: 8px;
+  max-width: 275px; /* Asegura que no se expandan demasiado */
+  /* object-fit: cover; */
 }
 
 
 /* En pantallas pequeñas (menos de 768px) */
 @media (max-width: 768px) {
   .cont-card app-card {
-    width: 48%; /* Las tarjetas ocuparán un 48% del ancho */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  .card-title {
+    font-size: 18px;
+  }
+  .cont-text{
+    display: block;
+    padding: 2px;
+  }
+  .cont-text p {
+    font-size: 12px;
+  }
+  .cont-img {
+    margin: 0;
   }
 }
 

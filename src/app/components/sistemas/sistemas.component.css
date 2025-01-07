@@ -1,0 +1,55 @@
+/* Contenedor de múltiples tarjetas */
+.cont-card {
+  display: flex;
+  justify-content: center;
+  margin: 20px; /* Distribuye las tarjetas de manera equitativa */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten al tamaño dela pantalla */
+  gap: 100px;
+}
+
+/* Cada tarjeta dentro del contenedor */
+.cont-card app-card {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0 20px 30px 20px;
+  padding: 8px;
+  max-width: 500px; /* Asegura que no se expandan demasiado */
+  object-fit: cover;
+}
+
+
+/* En pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  .cont-card app-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  /*Este codigo de abajo no lo lee, para cambiar los estilos nuevamente, tiene que
+  ser en el componente principal en card poner en pantallas pequeñas
+  la medida que tendrá, en esta parte no los lee, igual que los demas
+  componentes*/
+  .cont-card title {
+    font-size: 18px;
+  }
+  .cont-card text{
+    display: block;
+    padding: 2px;
+  }
+  .cont-card text p {
+    font-size: 12px;
+  }
+  .cont-card img {
+    margin: 0;
+  }
+}
+
+/* En pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  /*IMPORTANTE ESTE CODIGO DE AQUI ABAJO, PERMITE QUE LOS COMPONENTES SE
+  ADAPTE A LAS PANTALLAS PEQUEÑAS*/
+  .cont-card app-card {
+    width: 100%; /* Las tarjetas ocuparán el 100% del ancho */
+  }
+}

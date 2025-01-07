@@ -1,7 +1,10 @@
-
 <div class="card">
   <h2>{{ title }}</h2>
   <img [src]="imageUrl" alt="{{ title }}" />
-  <p>{{ text }}</p>
-  <button (click)="onButtonClick()">{{buttonText}}</button>
+  <p>
+    <span *ngFor="let line of text.split('\n'); let i = index">
+      {{ line }}<br *ngIf="i < text.split('\n').length - 1">
+    </span>
+  </p>
+  <button (click)="onButtonClick()">{{ buttonText }}</button>
 </div>

@@ -8,19 +8,19 @@
   }
   
   /* Cada tarjeta dentro del contenedor */
-  .cont-card app-card {
+  .cont-card app-tarjeta {
     display: flex;
     box-sizing: border-box;
     margin: 0 20px 30px 20px;
     padding: 8px;
-    max-width: 275px; /* Asegura que no se expandan demasiado */
-    /* object-fit: cover; */
+    max-width: 500px; /* Asegura que no se expandan demasiado */
+    object-fit: cover;
   }
   
   
   /* En pantallas pequeñas (menos de 768px) */
   @media (max-width: 768px) {
-    .cont-card app-card {
+    .cont-card app-tarjeta {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -50,7 +50,9 @@
   
   /* En pantallas muy pequeñas (menos de 480px) */
   @media (max-width: 480px) {
-    .cont-card app-card {
+    /*IMPORTANTE ESTE CODIGO DE AQUI ABAJO, PERMITE QUE LOS COMPONENTES SE
+  ADAPTE A LAS PANTALLAS PEQUEÑAS*/
+    .cont-card app-tarjeta {
       width: 100%; /* Las tarjetas ocuparán el 100% del ancho */
     }
   }

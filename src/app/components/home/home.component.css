@@ -8,13 +8,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra para destacar la tarjeta */
 }
 .cont-img {
-  flex: 0.5;
+  /* flex: 0.5; */
   background-color: #333;
   margin: 10px;
 }
 
 .cont-text {
-  flex: 1;
+  /* flex: 1; */
   background-color: #333;
   margin: 10px;
   padding: 30px;
@@ -40,6 +40,7 @@ p {
   display: flex;
   justify-content: space-between; /* Distribuye las tarjetas de manera equitativa */
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten al tamaño de la pantalla */
+  margin: 10px;
 }
 
 /* Cada tarjeta dentro del contenedor */
@@ -55,12 +56,17 @@ p {
 
 /* En pantallas pequeñas (menos de 768px) */
 @media (max-width: 768px) {
+  /*Este codigo de bajo del componente dando estilos, tampoco afecta */
   .cont-card app-card {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
   }
+  /*En esta parte de este código de bajo
+  si afecta los estilos al cambiar la pantalla
+  porque ese no es de un componente, sino en la misma vista de home
+  estas clases definidas como card, card-title, hasta cont-img*/
   .card {
     display: flex;
     flex-direction: column;
@@ -85,6 +91,8 @@ p {
 
 /* En pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
+  /*IMPORTANTE ESTE CODIGO DE AQUI ABAJO, PERMITE QUE LOS COMPONENTES SE
+  ADAPTE A LAS PANTALLAS PEQUEÑAS*/
   .cont-card app-card {
     width: 100%; /* Las tarjetas ocuparán el 100% del ancho */
   }

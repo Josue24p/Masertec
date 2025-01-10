@@ -1,26 +1,24 @@
 /* Contenedor de múltiples tarjetas */
 .cont-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px; /* Espaciado entre las tarjetas */
-  padding: 20px;
-  max-width: 400px; /* Ancho máximo del contenedor */
-  margin: auto; /* Centrar el contenedor */
-  min-height: calc(100vh - 100px)
-}
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px; /* Distribuye las tarjetas de manera equitativa */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten al tamaño dela pantalla */
+    gap: 100px;
+    min-height: calc(100vh - 100px);
+  }
   
-  /* Cada tarjeta dentro del contenedor 
-  arriba se define los estilos de la tarjeta
+  /* Cada tarjeta está dentro dentro del contenedor si queremos darle estilo a la tarjeta llamamos lo siguiente
+  dato adicional agregar estilos para que este responsive creo*/
   .cont-card app-tarjeta {
     display: flex;
     box-sizing: border-box;
     margin: 0 20px 30px 20px;
     padding: 8px;
-    max-width: 500px;  Asegura que no se expandan demasiado
-    object-fit: cover; 
-  }*/
+    max-width: 500px; /* Asegura que no se expandan demasiado */
+    /* object-fit: cover; */
+  }
   
   
   /* En pantallas pequeñas (menos de 768px) */

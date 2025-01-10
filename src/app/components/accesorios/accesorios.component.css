@@ -7,15 +7,7 @@
   gap: 100px;
 }
 
-/* Cada tarjeta dentro del contenedor */
-.cont-card app-tarjeta {
-  display: flex;
-  box-sizing: border-box;
-  margin: 0 20px 30px 20px;
-  padding: 8px;
-  max-width: 500px; /* Asegura que no se expandan demasiado */
-  object-fit: cover;
-}
+/* Codigo de arriba solo es para estilar el div que envuelve las tarjetas */
 
 
 /* En pantallas pequeñas (menos de 768px) */

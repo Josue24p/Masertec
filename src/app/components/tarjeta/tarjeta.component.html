@@ -1,5 +1,6 @@
 <div class="card">
     <h2>{{ title }}</h2>
     <img [src]="imageUrl" alt="{{ title }}" />
-    <button (click)="onButtonClick()">{{buttonText}}</button>
+    <ng-content></ng-content> <!-- Para incluir contenido adicional -->
+    <button *ngIf="showButton" (click)="onButtonClick()">{{buttonText}}</button>
   </div>

@@ -1,14 +1,13 @@
 .card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   border: 1px solid #e0e0e0;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 400px;
   transition: all 0.3s ease; /* Transición suave para cambios */
-  height: 100%;
+  height: 360px;
   background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Degradado sutil */
   position: relative; /* Para posicionar elementos decorativos */
 }
@@ -32,16 +31,15 @@
 }
 
 .card img {
-  width: auto;
-  height: auto;
+  width: 300px;
+  height: 200px;
   display: block;
-  padding: 30px;
+  /* padding: 0px 40px 40px 40px; */
 }
 
 .card h2 {
-  font-size: 1.5rem;
   font-weight: bold;
-  margin: 16px 0;
+  margin: 20px;
   color: #333;
   text-align: center;
 }
@@ -61,8 +59,9 @@
 
 .card button {
   display: block;
+  margin-top: auto;
   width: 100%;
-  padding: 12px;
+  padding: 9px;
   background: linear-gradient(to right, #333333, #440d01); /* Degradado del navbar */
   color: white;
   border: none;

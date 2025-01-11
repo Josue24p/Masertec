@@ -73,3 +73,12 @@
     font-size: 0.9rem;
   }
 }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espacio de 10px entre los iconos */
+}
+
+.social-icons a {
+  margin: 5px; /* Márgenes adicionales si es necesario */
+}

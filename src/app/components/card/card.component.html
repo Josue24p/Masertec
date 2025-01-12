@@ -6,5 +6,5 @@
       {{ line }}<br *ngIf="i < text.split('\n').length - 1">
     </span>
   </p>
-  <button (click)="onButtonClick()">{{ buttonText }}</button>
+  <button *ngIf="showButton" (click)="onButtonClick()">{{ buttonText }}</button>
 </div>

@@ -16,27 +16,38 @@
 <div class="cont-card">
   <app-card title="Fotochecks" imageUrl="https://masertecperu.com/imagenes/fotocheck.png"
     text="Nuestro servicio de impresión de fotochecks incluye la elaboración del diseño y sesión fotográfica al personal en sus propias instalaciones sin costo adicional."
-    buttonText="Ver Fotochecks" route="/servicios">
+    buttonText="Ver Fotochecks"
+    [showButton]="true"
+    route="/servicios"
+    >
   </app-card>
 
   <app-card title="Productos" imageUrl="https://masertecperu.com/imagenes/productosindex.png"
     text="Ofrecemos productos de calidad para su empresa satisfaciendo las necesidades que usted requiere, contamos con impresoras de etiquetas termicas, impresoras de pvc, softwares y mucho mas."
-    buttonText="Ver Productos" route="/product">
+    buttonText="Ver Productos"
+    [showButton]="true"
+    route="/product">
   </app-card>
 
   <app-card title="Accesorios" imageUrl="https://masertecperu.com/imagenes/accesorios.png"
     text="Contamos con una gama diversa de accesorios de fotochecks tales como portafotochecks, cintas, micas, yoyos retractiles."
-    buttonText="Ver Accesorios" route="/accesorio">
+    buttonText="Ver Accesorios"
+    [showButton]="true"
+    route="/accesorio">
   </app-card>
 
   <app-card title="Sistemas" imageUrl="https://masertecperu.com/imagenes/sacop.png"
     text="SACOP Ha sido desarrollado para brindar un efectivo control sobre la asistencia de su personal, en información referida a horas extras, tardanzas, permisos,entre otros."
-    buttonText="Ver Sistema" route="/sistema">
+    buttonText="Ver Sistema"
+    [showButton]="true"
+    route="/sistema">
   </app-card>
 
   <app-card title="Soporte" imageUrl="https://masertecperu.com/imagenes/servtec.png"
     text="Nuestro equipo de SERVICIO TÉCNICO está conformado por Ingenieros y Técnicos quienes se encuentran a su disposición de manera exclusiva para garantizarle un servicio de calidad."
-    buttonText="Ver Soporte" route="/soporte">
+    buttonText="Ver Soporte"
+    [showButton]="true"
+    route="/soporte">
   </app-card>
 
 </div>

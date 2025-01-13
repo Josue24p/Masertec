@@ -12,6 +12,7 @@ import { ImpresorasComponent } from './components/impresoras/impresoras.componen
 import { ImpretiquetasComponent } from './components/impretiquetas/impretiquetas.component';
 import { RelojesComponent } from './components/relojes/relojes.component';
 import { LectorasComponent } from './components/lectoras/lectoras.component';
+import { SistemasVersionesComponent } from './components/sistemas-versiones/sistemas-versiones.component';
 
 export const routes: Routes = [
   {
@@ -65,5 +66,9 @@ export const routes: Routes = [
   {
     path: "lectoras",
     component: LectorasComponent
+  },
+  {
+    path: "versiones",
+    component: SistemasVersionesComponent
   }
 ];

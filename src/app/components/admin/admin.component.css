@@ -1,0 +1,62 @@
+/* Estilo general */
+.admin-dashboard {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Secciones */
+.admin-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.admin-section h2 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Botones */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn {
+  background-color: #4CAF50; /* Verde */
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.list-btn {
+  background-color: #2196F3; /* Azul */
+}
+
+.list-btn:hover {
+  background-color: #1e87e5;
+}

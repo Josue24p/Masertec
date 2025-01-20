@@ -9,5 +9,6 @@ import { NgModule } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  mostrarFormulario: boolean = false;
+  
 }

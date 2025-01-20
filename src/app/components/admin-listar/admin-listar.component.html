@@ -1,0 +1,121 @@
+<section class="product-form">
+    <h1>Registrar Producto</h1>
+    <form class="mt-4">
+      <div class="row mb-3">
+        <!-- Código -->
+        <div class="col-md-6">
+          <label for="codigo" class="form-label">Código</label>
+          <input type="text" class="form-control" id="codigo" placeholder="Ingrese el código del producto">
+        </div>
+        <!-- Nombre -->
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del producto">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <!-- Descripción -->
+        <div class="col-md-6">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción">
+        </div>
+        <!-- Detalles -->
+        <div class="col-md-6">
+          <label for="detalles" class="form-label">Detalles</label>
+          <input type="text" class="form-control" id="detalles" placeholder="Ingrese detalles del producto">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <!-- Imagen -->
+        <div class="col-md-6">
+          <label for="imagen" class="form-label">Imagen</label>
+          <input type="file" class="form-control" id="imagen">
+        </div>
+      </div>
+      <!-- Botones -->
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-success me-2">Guardar</button>
+        <button type="reset" class="btn btn-secondary">Limpiar</button>
+      </div>
+    </form>
+  </section>
+<div class="main-content">
+  <section class="product-list">
+    <h1>Lista de Productos</h1>
+    <div class="search-register">
+      <div class="search-container">
+        <input type="text" placeholder="Buscar" id="search" class="form-control w-50 d-inline">
+        <button id="register-btn" class="btn btn-primary ms-3">REGISTRAR</button>
+      </div>
+    </div>
+    <table class="table table-hover mt-4">
+      <thead class="table-dark">
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Detalles</th>
+          <th>Imagen</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>Impresora HP LaserJet</td>
+          <td>Impresora láser monocromática</td>
+          <td>Velocidad: 20ppm, Resolución: 1200dpi</td>
+          <td><img src="https://via.placeholder.com/50" alt="Impresora HP"></td>
+          <td>
+            <button class="btn btn-success btn-sm me-2">Modificar</button>
+            <button class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Lector de códigos Zebra</td>
+          <td>Lector de códigos de barras inalámbrico</td>
+          <td>Alcance: 10m, Compatible con 1D/2D</td>
+          <td><img src="https://via.placeholder.com/50" alt="Lector Zebra"></td>
+          <td>
+            <button class="btn btn-success btn-sm me-2">Modificar</button>
+            <button class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Impresora Epson EcoTank</td>
+          <td>Impresora a color con sistema de tanque</td>
+          <td>Rendimiento: 7,500 páginas en negro</td>
+          <td><img src="https://via.placeholder.com/50" alt="Impresora Epson"></td>
+          <td>
+            <button class="btn btn-success btn-sm me-2">Modificar</button>
+            <button class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>004</td>
+          <td>Lector Honeywell Voyager</td>
+          <td>Lector láser ergonómico</td>
+          <td>Velocidad: 100 lecturas/seg</td>
+          <td><img src="https://via.placeholder.com/50" alt="Lector Honeywell"></td>
+          <td>
+            <button class="btn btn-success btn-sm me-2">Modificar</button>
+            <button class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>005</td>
+          <td>Impresora Canon PIXMA</td>
+          <td>Impresora multifuncional</td>
+          <td>Imprime, copia y escanea</td>
+          <td><img src="https://via.placeholder.com/50" alt="Impresora Canon"></td>
+          <td>
+            <button class="btn btn-success btn-sm me-2">Modificar</button>
+            <button class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

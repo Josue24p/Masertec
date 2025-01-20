@@ -13,11 +13,17 @@ import { ImpretiquetasComponent } from './components/impretiquetas/impretiquetas
 import { RelojesComponent } from './components/relojes/relojes.component';
 import { LectorasComponent } from './components/lectoras/lectoras.component';
 import { SistemasVersionesComponent } from './components/sistemas-versiones/sistemas-versiones.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminListarComponent } from './components/admin-listar/admin-listar.component';
 
 export const routes: Routes = [
   {
     path: "",
     component: HomeComponent
+  },
+  {
+    path: "admin",
+    component: AdminComponent
   },
   {
     path: "servicios",
@@ -70,5 +76,9 @@ export const routes: Routes = [
   {
     path: "versiones",
     component: SistemasVersionesComponent
+  },
+  {
+    path: "adminlistar",
+    component: AdminListarComponent
   }
 ];

@@ -7,8 +7,8 @@
         </div>
       <img src="https://www.ecommercenews.pe/wp-content/uploads/2022/01/atencion-al-cliente.png" alt="soporte" class="img-fluid" style="max-width: 100%; padding-top: 3em;">
     </div>
-  
-    <!-- Columna de texto --> 
+
+    <!-- Columna de texto -->
     <div class="col-md-6 col-12 p-4">
         <div class="d-flex align-items-start">
       <svg class="us-asset-3 mb-3" width="44" height="8" viewBox="0 0 44 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,23 +21,28 @@
       <div class="container d-flex justify-content-center">
         <div class="card p-4" style="width: 100%; max-width: 500px;">
           <form [formGroup]="formularioContacto">
+
             <div class="mb-3">
               <label for="empresa" class="form-label">Empresa</label>
-              <input type="text" 
-              [ngClass]="{'is-invalid': hasErrors('nombre','required')}" 
+              <input type="text"
+              [ngClass]="{'is-invalid': hasErrors('nombre','required')}"
               formControlName="nombre"
               class="form-control" id="empresa"
                >
               <div class="text-danger" *ngIf="hasErrors('nombre','required')">Campo obligatorio</div>
             </div>
+
             <div class="mb-3">
               <label for="telefono" class="form-label">Telefono</label>
-              <input type="text" 
-              [ngClass]="{'is-invalid': hasErrors('celular','required')}" 
+              <input type="text"
+              [ngClass]="{'is-invalid': hasErrors('celular','required')}"
               formControlName="celular"
               class="form-control" id="celular">
             </div>
             <div class="text-danger" *ngIf="hasErrors('celular','required')">Campo obligatorio</div>
+            <div class="text-danger" *ngIf="hasErrors('celular', 'pattern')">Debe ser un número válido que comience con 9 y tenga 9 dígitos.</div>
+
+
             <div class="mb-3">
               <label for="correo" class="form-label">Correo electrónico</label>
               <input type="email"

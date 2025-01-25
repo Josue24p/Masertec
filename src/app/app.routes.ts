@@ -15,8 +15,14 @@ import { LectorasComponent } from './components/lectoras/lectoras.component';
 import { SistemasVersionesComponent } from './components/sistemas-versiones/sistemas-versiones.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminListarComponent } from './components/admin-listar/admin-listar.component';
+import { LoginComponent } from './components/login/login.component';
+import { Component } from '@angular/core';
 
 export const routes: Routes = [
+  {
+    path: "login",
+    component: LoginComponent
+  },
   {
     path: "",
     component: HomeComponent

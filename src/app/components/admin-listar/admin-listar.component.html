@@ -1,4 +1,6 @@
-<section class="product-form">
+<div class="container-fluid mt-4">
+  <!-- Registro de Producto -->
+  <section class="product-form mb-5">
     <h1>Registrar Producto</h1>
     <form class="mt-4">
       <div class="row mb-3">
@@ -39,83 +41,44 @@
       </div>
     </form>
   </section>
-<div class="main-content">
+
+  <!-- Lista de Productos -->
   <section class="product-list">
     <h1>Lista de Productos</h1>
-    <div class="search-register">
-      <div class="search-container">
-        <input type="text" placeholder="Buscar" id="search" class="form-control w-50 d-inline">
+    <div class="search-register d-flex justify-content-between align-items-center mb-3">
+      <div class="search-container d-flex">
+        <input type="text" placeholder="Buscar" id="search" class="form-control w-50">
         <button id="register-btn" class="btn btn-primary ms-3">REGISTRAR</button>
       </div>
     </div>
-    <table class="table table-hover mt-4">
-      <thead class="table-dark">
-        <tr>
-          <th>Código</th>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Detalles</th>
-          <th>Imagen</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>001</td>
-          <td>Impresora HP LaserJet</td>
-          <td>Impresora láser monocromática</td>
-          <td>Velocidad: 20ppm, Resolución: 1200dpi</td>
-          <td><img src="https://via.placeholder.com/50" alt="Impresora HP"></td>
-          <td>
-            <button class="btn btn-success btn-sm me-2">Modificar</button>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>002</td>
-          <td>Lector de códigos Zebra</td>
-          <td>Lector de códigos de barras inalámbrico</td>
-          <td>Alcance: 10m, Compatible con 1D/2D</td>
-          <td><img src="https://via.placeholder.com/50" alt="Lector Zebra"></td>
-          <td>
-            <button class="btn btn-success btn-sm me-2">Modificar</button>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>003</td>
-          <td>Impresora Epson EcoTank</td>
-          <td>Impresora a color con sistema de tanque</td>
-          <td>Rendimiento: 7,500 páginas en negro</td>
-          <td><img src="https://via.placeholder.com/50" alt="Impresora Epson"></td>
-          <td>
-            <button class="btn btn-success btn-sm me-2">Modificar</button>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>004</td>
-          <td>Lector Honeywell Voyager</td>
-          <td>Lector láser ergonómico</td>
-          <td>Velocidad: 100 lecturas/seg</td>
-          <td><img src="https://via.placeholder.com/50" alt="Lector Honeywell"></td>
-          <td>
-            <button class="btn btn-success btn-sm me-2">Modificar</button>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>005</td>
-          <td>Impresora Canon PIXMA</td>
-          <td>Impresora multifuncional</td>
-          <td>Imprime, copia y escanea</td>
-          <td><img src="https://via.placeholder.com/50" alt="Impresora Canon"></td>
-          <td>
-            <button class="btn btn-success btn-sm me-2">Modificar</button>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Tabla Responsive -->
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Detalles</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Impresora HP LaserJet</td>
+            <td>Impresora láser monocromática</td>
+            <td>Velocidad: 20ppm, Resolución: 1200dpi</td>
+            <td><img src="https://via.placeholder.com/50" alt="Impresora HP" class="img-fluid rounded"></td>
+            <td>
+              <button class="btn btn-success btn-sm me-2">Modificar</button>
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Más filas aquí -->
+        </tbody>
+      </table>
+    </div>
   </section>
 </div>

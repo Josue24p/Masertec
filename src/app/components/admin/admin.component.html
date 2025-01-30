@@ -1,47 +1,69 @@
-<div class="admin-dashboard">
+<div class="admin-dashboard container-fluid">
   <h1>Panel de Administración</h1>
-  
-  <!-- Productos -->
-  <section class="admin-section">
-    <h2>Productos</h2>
-    <div class="actions">
-      <button class="add-btn" (click)="mostrarFormulario = true">Agregar Producto</button>
-      <a class="nav-link" href="/adminlistar" class="btn btn-primary">
-        <i class="fas fa-list"></i> Listar
-      </a>
-    </div>
-  </section>
 
-  <!-- Accesorios -->
-  <section class="admin-section">
-    <h2>Accesorios</h2>
-    <div class="actions">
-      <button class="add-btn">Agregar Accesorio</button>
-      <a class="nav-link" href="/adminlistar" class="btn btn-primary">
-        <i class="fas fa-list"></i> Listar
-      </a>
-    </div>
-  </section>
+  <div class="row row-cols-1 row-cols-md-2 g-4 m-auto p-2">
 
-  <!-- Servicios -->
-  <section class="admin-section">
-    <h2>Servicios</h2>
-    <div class="actions">
-      <button class="add-btn">Agregar Servicio</button>
-      <a class="nav-link" href="/adminlistar" class="btn btn-primary">
-        <i class="fas fa-list"></i> Listar
-      </a>
-    </div>
-  </section>
+    <div class="col">
 
-  <!-- Sistemas -->
-  <section class="admin-section">
-    <h2>Sistemas</h2>
-    <div class="actions">
-      <button class="add-btn">Agregar Sistema</button>
-      <a class="nav-link" href="/adminlistar" class="btn btn-primary">
-        <i class="fas fa-list"></i> Listar
-      </a>
+      <!-- Productos -->
+      <section class="admin-section text-center" >
+        <h2>Productos</h2>
+        <img src="https://www.tiendamexpress.com/images/thumbs/0040026_impresora-multifuncional-epson-l4260-ecotank_600.jpeg" class="img-fluid object-fit-cover p-2" alt="productos">
+        <div class="actions d-flex justify-content-end">
+          <button class="add-btn"><a class="nav-link" href="/adminlistar"><i class="fas fa-dashboard"></i> Panel de productos</a></button>
+        </div>
+      </section>
+
     </div>
-  </section>
-</div>
+
+    <div class="col">
+
+      <!-- Accesorios -->
+      <section class="admin-section text-center">
+        <h2>Accesorios</h2>
+        <img src="https://socialred.net/wp-content/uploads/2023/06/fotocheck-yoyo-762x1024.png" class="img-fluid object-fit-cover p-2" alt="productos">
+        <div class="actions d-flex justify-content-end">
+          <button class="add-btn"><a class="nav-link" href="/adminlistar"><i class="fas fa-dashboard"></i> Panel de accesorios</a></button>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 m-auto p-2">
+
+    <div class="col">
+      <!-- Home -->
+      <section class="admin-section text-center">
+        <h2>Home</h2>
+        <img src="https://w7.pngwing.com/pngs/148/754/png-transparent-learning-management-system-educational-technology-organization-fiscal-thumbnail.png" class="img-fluid object-fit-cover p-3" alt="productos">
+        <div class="actions d-flex justify-content-end">
+          <button class="add-btn"><a class="nav-link" href="/adminlistar"><i class="fas fa-dashboard"></i> Panel de servicios</a></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <!-- Sistemas -->
+      <section class="admin-section text-center">
+        <h2>Sistemas</h2>
+        <img src="https://w7.pngwing.com/pngs/289/585/png-transparent-systems-analyst-information-system-design-angle-text-logo-thumbnail.png" class="img-fluid object-fit-cover p-3" alt="productos">
+        <div class="actions d-flex justify-content-end">
+          <button class="add-btn"><a class="nav-link" href="/adminlistar"><i class="fas fa-dashboard"></i> Panel de sistemas</a></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <!-- Soporte -->
+      <section class="admin-section text-center">
+        <h2>Soporte</h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/2333/2333501.png" class="img-fluid object-fit-cover p-3" alt="productos">
+        <div class="actions d-flex justify-content-end">
+          <button class="add-btn"><a class="nav-link" href="/adminlistar"><i class="fas fa-dashboard"></i> Panel de sistemas</a></button>
+        </div>
+      </section>
+    </div>
+
+  </div>

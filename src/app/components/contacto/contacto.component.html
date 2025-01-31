@@ -20,45 +20,30 @@
       </h3>
       <div class="container d-flex justify-content-center">
         <div class="card p-4" style="width: 100%; max-width: 500px;">
-          <form [formGroup]="formularioContacto">
-
+          <form [formGroup]="formularioContacto" (ngSubmit)="onSubmit()">
             <div class="mb-3">
-              <label for="empresa" class="form-label">Empresa</label>
-              <input type="text"
-              [ngClass]="{'is-invalid': hasErrors('nombre','required')}"
-              formControlName="nombre"
-              class="form-control" id="empresa"
-               >
-              <div class="text-danger" *ngIf="hasErrors('nombre','required')">Campo obligatorio</div>
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" formControlName="nombre" class="form-control" id="nombre">
             </div>
-
+          
             <div class="mb-3">
-              <label for="telefono" class="form-label">Telefono</label>
-              <input type="text"
-              [ngClass]="{'is-invalid': hasErrors('celular','required')}"
-              formControlName="celular"
-              class="form-control" id="celular">
+              <label for="celular" class="form-label">Teléfono</label>
+              <input type="text" formControlName="celular" class="form-control" id="celular">
             </div>
-            <div class="text-danger" *ngIf="hasErrors('celular','required')">Campo obligatorio</div>
-            <div class="text-danger" *ngIf="hasErrors('celular', 'pattern')">Debe ser un número válido que comience con 9 y tenga 9 dígitos.</div>
-
-
+          
             <div class="mb-3">
-              <label for="correo" class="form-label">Correo electrónico</label>
-              <input type="email"
-              [ngClass]="{'is-invalid': hasErrors('tipoEmail','required')||hasErrors('tipoEmail','email')}"
-              formControlName="tipoEmail"
-               class="form-control" id="correo" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">Nunca compartiremos tu correo con nadie.</div>
-              <div class="text-danger" *ngIf="hasErrors('tipoEmail','required')">Campo obligatorio</div>
-              <div class="text-danger" *ngIf="hasErrors('tipoEmail','email')">Formato incorrecto</div>
+              <label for="tipoEmail" class="form-label">Correo Electrónico</label>
+              <input type="email" formControlName="tipoEmail" class="form-control" id="tipoEmail">
             </div>
+          
             <div class="mb-3">
-              <label for="mensaje" class="form-label">Mensaje</label>
-              <input type="text" class="form-control" id="mensaje">
+              <label for="tamanio" class="form-label">Mensaje</label>
+              <input type="text" formControlName="tamanio" class="form-control" id="tamanio">
             </div>
+          
             <button type="submit" class="btn btn-primary w-100">Enviar</button>
           </form>
+          <!--[disabled]="formularioContacto.invalid"-->
         </div>
       </div>
 

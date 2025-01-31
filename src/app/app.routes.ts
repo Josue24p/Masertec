@@ -17,6 +17,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminListarComponent } from './components/admin-listar/admin-listar.component';
 import { LoginComponent } from './components/login/login.component';
 import { Component } from '@angular/core';
+import { ContactanosComponent } from './components/contactanos/contactanos.component';
 
 export const routes: Routes = [
   {
@@ -86,5 +87,9 @@ export const routes: Routes = [
   {
     path: "adminlistar",
     component: AdminListarComponent
+  },
+  {
+    path: "contactanos",
+    component: ContactanosComponent
   }
 ];

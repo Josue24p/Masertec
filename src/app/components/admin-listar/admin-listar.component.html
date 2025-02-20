@@ -2,41 +2,39 @@
   <!-- Registro de Producto -->
   <section class="product-form mb-5">
     <h1>Registrar Producto</h1>
-    <form class="mt-4">
+    <form (submit)="registrarProducto()" class="mt-4">
       <div class="row mb-3">
-        <!-- Código -->
-        <div class="col-md-6">
-          <label for="codigo" class="form-label">Código</label>
-          <input type="text" class="form-control" id="codigo" placeholder="Ingrese el código del producto">
-        </div>
         <!-- Nombre -->
         <div class="col-md-6">
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del producto">
-        </div>
-      </div>
-      <div class="row mb-3">
-        <!-- Descripción -->
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del producto" [(ngModel)]="nuevoProducto.prod_nombre" name="nombre">
+        </div><!-- Descripción -->
         <div class="col-md-6">
           <label for="descripcion" class="form-label">Descripción</label>
-          <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción">
-        </div>
-        <!-- Detalles -->
-        <div class="col-md-6">
-          <label for="detalles" class="form-label">Detalles</label>
-          <input type="text" class="form-control" id="detalles" placeholder="Ingrese detalles del producto">
+          <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción" [(ngModel)]="nuevoProducto.prod_descripcion" name="descripcion">
         </div>
       </div>
       <div class="row mb-3">
         <!-- Imagen -->
         <div class="col-md-6">
           <label for="imagen" class="form-label">Imagen</label>
-          <input type="file" class="form-control" id="imagen">
+          <input type="file" class="form-control" id="imagen" (change)="onFileSelected($event)">
+        </div>
+        <!-- Subcategoría -->
+        <div class="col-md-6">
+          <label for="subcategoria">Seleccione una subcategoría:</label>
+          <select id="subcategoria" class="form-control" [(ngModel)]="nuevoProducto.id_subcategoria" name="subcategoria">
+            <option *ngFor="let sub of subcategorias" [value]="sub.id_subcategoria">
+              {{ sub.subcat_nombre }}
+            </option>
+          </select>
         </div>
       </div>
+
       <!-- Botones -->
       <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-success me-2">Guardar</button>
+        <button type="button" class="btn btn-primary me-2" (click)="actualizarProducto()" [disabled]="!editando">Confirmar</button>
+        <button type="submit" class="btn btn-success me-2" [disabled]="editando">Guardar</button>
         <button type="reset" class="btn btn-secondary">Limpiar</button>
       </div>
     </form>
@@ -59,21 +57,27 @@
             <th>Código</th>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th>Detalles</th>
+            <th>subcategoria</th>
             <th>Imagen</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>001</td>
-            <td>Impresora HP LaserJet</td>
-            <td>Impresora láser monocromática</td>
-            <td>Velocidad: 20ppm, Resolución: 1200dpi</td>
-            <td><img src="https://via.placeholder.com/50" alt="Impresora HP" class="img-fluid rounded"></td>
+          <tr *ngFor="let producto of productos">
+            <td>{{ producto.id_producto }}</td>
+            <td>{{ producto.prod_nombre }}</td>
+            <td>{{ producto.prod_descripcion }}</td>
+            <td>{{ producto.subcat_nombre }}</td>
             <td>
-              <button class="btn btn-success btn-sm me-2">Modificar</button>
-              <button class="btn btn-danger btn-sm">Eliminar</button>
+              <img 
+                [src]="producto.prod_image ? 'http://localhost:4000/uploads/' + producto.prod_image: 'https://via.placeholder.com/50'" 
+                alt="{{ producto.prod_nombre }}" 
+                class="img-fluid rounded"
+              />
+            </td>
+            <td>
+              <button (click)="editarProducto(producto)" class="btn btn-success">Modificar</button>
+              <button class="btn btn-danger">Eliminar</button>
             </td>
           </tr>
           <!-- Más filas aquí -->

@@ -89,7 +89,7 @@ export const routes: Routes = [
     component: AdminListarComponent
   },
   {
-    path: "contactanos",
+    path: "admin/contacto",
     component: ContactanosComponent
   }
 ];

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000'; // URL del backend en Node.js
+  private apiUrl = 'http://localhost:4000'; // URL del backend en Node.js
 
   constructor(private http: HttpClient) {}
   //traer mensaje de confirmación de conexión bk
@@ -16,12 +16,12 @@ export class ApiService {
   
   //traer registro de contactanos
   getContactos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/contactos`);
+    return this.http.get<any[]>(`${this.apiUrl}/admin/contacto`);
   }
 
   // Método para enviar los datos de contacto al backend
   enviarContacto(contactData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/contactos`, contactData);
+    return this.http.post<any>(`${this.apiUrl}/admin/contacto`, contactData);
   }  
   
 }

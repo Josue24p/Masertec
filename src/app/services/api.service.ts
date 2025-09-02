@@ -16,31 +16,31 @@ export class ApiService {
 
   //traer registro de contactanos
   getContactos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/admin/contacto`);
+    return this.http.get<any[]>(`${this.apiUrl}/contacto`);
   }
 
   // Método para enviar los datos de contacto al backend
   enviarContacto(contactData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/admin/contacto`, contactData);
+    return this.http.post<any>(`${this.apiUrl}/contacto`, contactData);
   }
   // Método para obtener subcategorías
   getSubcategorias(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/admin/subcategorias`);
+    return this.http.get<any[]>(`${this.apiUrl}/subcategorias/subcategorias`);
   }
 
   // Obtener todos los productos
   getProductos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/admin/productos`);
+    return this.http.get<any[]>(`${this.apiUrl}/producto/productos`);
   }
 
   // Crear un nuevo producto
   crearProducto(producto: FormData): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/admin/productos`, producto);
+    return this.http.post<any>(`${this.apiUrl}/producto`, producto);
   }
 
 
   actualizarProducto(id_producto: number, producto: FormData) {
-    return this.http.put(`http://localhost:4000/admin/productos/${id_producto}`, producto);
+    return this.http.put(`https://masertecperu.com/api/producto/${id_producto}`, producto);
   }
 
 

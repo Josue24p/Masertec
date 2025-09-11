@@ -43,6 +43,10 @@ export class ApiService {
     return this.http.put(`https://masertecperu.com/api/producto/${id_producto}`, producto);
   }
 
+  login(data: FormData): Observable<any>{
+    return this.http.post<any>('https://masertecperu.com/login/api/auth', data)
+  }
+
 
 
 

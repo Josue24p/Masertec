@@ -21,7 +21,7 @@ import { ContactanosComponent } from './components/contactanos/contactanos.compo
 
 export const routes: Routes = [
   {
-    path: "login",
+    path: "acces",
     component: LoginComponent
   },
   {

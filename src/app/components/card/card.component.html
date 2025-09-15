@@ -2,9 +2,15 @@
   <h2>{{ title }}</h2>
   <img [src]="imageUrl" alt="{{ title }}" />
   <p>
-    <span *ngFor="let line of text.split('\n'); let i = index">
-      {{ line }}<br *ngIf="i < text.split('\n').length - 1">
-    </span>
+    @for (line of text.split('\n'); track line; let i = $index) {
+      <span>
+        {{ line }}@if (i < text.split('\n').length - 1) {
+        <br>
+        }
+      </span>
+    }
   </p>
-  <button *ngIf="showButton" (click)="onButtonClick()">{{ buttonText }}</button>
+  @if (showButton) {
+    <button (click)="onButtonClick()">{{ buttonText }}</button>
+  }
 </div>

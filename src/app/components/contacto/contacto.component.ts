@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { ApiService } from '../../services/api.service'; // Importa el servicio
 import { Router } from '@angular/router'; // Para redirigir después del envío
 
 @Component({
     selector: 'app-contacto',
-    imports: [ReactiveFormsModule, CommonModule],
+    imports: [ReactiveFormsModule],
     templateUrl: './contacto.component.html',
     styleUrl: './contacto.component.css'
 })

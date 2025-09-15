@@ -24,9 +24,11 @@
         <div class="col-md-6">
           <label for="subcategoria">Seleccione una subcategoría:</label>
           <select id="subcategoria" class="form-control" [(ngModel)]="nuevoProducto.id_subcategoria" name="subcategoria">
-            <option *ngFor="let sub of subcategorias" [value]="sub.id_subcategoria">
-              {{ sub.subcat_nombre }}
-            </option>
+            @for (sub of subcategorias; track sub) {
+              <option [value]="sub.id_subcategoria">
+                {{ sub.subcat_nombre }}
+              </option>
+            }
           </select>
         </div>
       </div>
@@ -63,26 +65,28 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let producto of productos">
-            <td>{{ producto.id_producto }}</td>
-            <td>{{ producto.prod_nombre }}</td>
-            <td>{{ producto.prod_descripcion }}</td>
-            <td>{{ producto.subcat_nombre }}</td>
-            <td>
-              <img 
-                [src]="producto.prod_image ? 'http://localhost:4000/uploads/' + producto.prod_image: 'https://via.placeholder.com/50'" 
-                alt="{{ producto.prod_nombre }}" 
-                class="img-fluid rounded"
-              />
-            </td>
-            <td>
-              <button (click)="editarProducto(producto)" class="btn btn-success">Modificar</button>
-              <button class="btn btn-danger">Eliminar</button>
-            </td>
-          </tr>
-          <!-- Más filas aquí -->
-        </tbody>
-      </table>
-    </div>
-  </section>
-</div>
+          @for (producto of productos; track producto) {
+            <tr>
+              <td>{{ producto.id_producto }}</td>
+              <td>{{ producto.prod_nombre }}</td>
+              <td>{{ producto.prod_descripcion }}</td>
+              <td>{{ producto.subcat_nombre }}</td>
+              <td>
+                <img
+                  [src]="producto.prod_image ? 'http://localhost:4000/uploads/' + producto.prod_image: 'https://via.placeholder.com/50'"
+                  alt="{{ producto.prod_nombre }}"
+                  class="img-fluid rounded"
+                  />
+                </td>
+                <td>
+                  <button (click)="editarProducto(producto)" class="btn btn-success">Modificar</button>
+                  <button class="btn btn-danger">Eliminar</button>
+                </td>
+              </tr>
+            }
+            <!-- Más filas aquí -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>

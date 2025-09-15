@@ -1,11 +1,11 @@
 import { Component,OnInit  } from '@angular/core';
 import { ApiService } from '../../services/api.service'; // Subir un nivel y acceder al servicio
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../../pipes/filter.pipe';
 @Component({
     selector: 'app-contactanos',
-    imports: [CommonModule, FilterPipe, FormsModule],
+    imports: [FilterPipe, FormsModule],
     templateUrl: './contactanos.component.html',
     styleUrl: './contactanos.component.css'
 })

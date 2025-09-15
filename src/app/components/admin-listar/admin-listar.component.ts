@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-admin-listar',
-    imports: [CommonModule, FormsModule],
+    imports: [FormsModule],
     templateUrl: './admin-listar.component.html',
     styleUrl: './admin-listar.component.css'
 })

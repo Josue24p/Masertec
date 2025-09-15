@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-tarjeta',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './tarjeta.component.html',
     styleUrl: './tarjeta.component.css'
 })

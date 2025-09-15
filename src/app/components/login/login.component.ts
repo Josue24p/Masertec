@@ -9,7 +9,7 @@ import { ApiService } from '../../services/api.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']  // 👈 corregido (antes tenías styleUrl)
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   email: string = '';
@@ -19,11 +19,13 @@ export class LoginComponent {
   constructor(private apiService: ApiService, private router: Router) {}
 
   onSubmit() {
-    const formData = new FormData();
-    formData.append('email', this.email);
-    formData.append('password', this.password);
+    // 🔹 enviar JSON en lugar de FormData
+    const loginData = {
+      email_usuario: this.email,
+      password_usuario: this.password
+    };
 
-    this.apiService.login(formData).subscribe({
+    this.apiService.login(loginData).subscribe({
       next: (response) => {
         console.log('Login exitoso:', response);
 
@@ -31,7 +33,7 @@ export class LoginComponent {
           localStorage.setItem('token', response.token);
         }
 
-        this.router.navigate(['/home']);
+        this.router.navigate(['/admin']);
       },
       error: (err) => {
         console.error('Error en login:', err);

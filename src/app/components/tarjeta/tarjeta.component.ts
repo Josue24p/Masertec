@@ -3,11 +3,10 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-tarjeta',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './tarjeta.component.html',
-  styleUrl: './tarjeta.component.css'
+    selector: 'app-tarjeta',
+    imports: [CommonModule],
+    templateUrl: './tarjeta.component.html',
+    styleUrl: './tarjeta.component.css'
 })
 export class TarjetaComponent {
   @Input() title!: string;

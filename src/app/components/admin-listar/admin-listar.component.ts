@@ -5,11 +5,10 @@ import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-admin-listar',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './admin-listar.component.html',
-  styleUrl: './admin-listar.component.css'
+    selector: 'app-admin-listar',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './admin-listar.component.html',
+    styleUrl: './admin-listar.component.css'
 })
 export class AdminListarComponent implements OnInit {
   subcategorias: any[] = [];

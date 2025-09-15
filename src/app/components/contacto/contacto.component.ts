@@ -5,11 +5,10 @@ import { ApiService } from '../../services/api.service'; // Importa el servicio
 import { Router } from '@angular/router'; // Para redirigir después del envío
 
 @Component({
-  selector: 'app-contacto',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './contacto.component.html',
-  styleUrl: './contacto.component.css'
+    selector: 'app-contacto',
+    imports: [ReactiveFormsModule, CommonModule],
+    templateUrl: './contacto.component.html',
+    styleUrl: './contacto.component.css'
 })
 export class ContactoComponent implements OnInit {
   formularioContacto!: FormGroup; // Definir sin inicializar, se asigna en ngOnInit

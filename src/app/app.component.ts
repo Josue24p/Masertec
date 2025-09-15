@@ -6,6 +6,7 @@ import { ApiService } from './services/api.service';
 
 @Component({
     selector: 'app-root',
+    standalone: true,
     imports: [RouterModule, FooterComponent, RouterOutlet, NavegacionComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'

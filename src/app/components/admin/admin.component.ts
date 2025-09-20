@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-admin',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent {
   mostrarFormulario: boolean = true;
+  constructor(private authService: AuthService) {}
+
+  logout() {
+    this.authService.logout();
+  }
 }

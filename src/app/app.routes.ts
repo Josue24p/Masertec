@@ -18,6 +18,7 @@ import { AdminListarComponent } from './components/admin-listar/admin-listar.com
 import { LoginComponent } from './components/login/login.component';
 import { Component } from '@angular/core';
 import { ContactanosComponent } from './components/contactanos/contactanos.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -30,7 +31,8 @@ export const routes: Routes = [
   },
   {
     path: "admin",
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [authGuard]
   },
   {
     path: "servicios",
@@ -86,10 +88,12 @@ export const routes: Routes = [
   },
   {
     path: "adminlistar",
-    component: AdminListarComponent
+    component: AdminListarComponent,
+     canActivate: [authGuard]
   },
   {
     path: "admin/contacto",
-    component: ContactanosComponent
+    component: ContactanosComponent,
+     canActivate: [authGuard]
   }
 ];

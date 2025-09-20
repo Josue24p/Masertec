@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,13 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   onSubmit() {
-    // 🔹 enviar JSON en lugar de FormData
     const loginData = {
       email_usuario: this.email,
       password_usuario: this.password
@@ -30,14 +34,15 @@ export class LoginComponent {
         console.log('Login exitoso:', response);
 
         if (response.token) {
-          localStorage.setItem('token', response.token);
+          // ✅ Usamos AuthService
+          this.authService.saveSession(response.token, response.usuario);
         }
 
         this.router.navigate(['/admin']);
       },
       error: (err) => {
         console.error('Error en login:', err);
-        this.errorMessage = 'Usuario o contraseña incorrectos';
+        this.errorMessage = err.error?.error || 'Usuario o contraseña incorrectos';
       }
     });
   }

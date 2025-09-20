@@ -1,0 +1,66 @@
+/* Fondo con gradiente animado */
+.bg-orange-900 {
+  background: linear-gradient(-45deg, #1f2937, #111827, #0e107e5e, #170994);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Tarjeta de login */
+.shadow-lg {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shadow-lg:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Campos de formulario */
+input {
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background-color: #f9fafb;
+  border-color: #6d28d9;
+  /* morado */
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.25);
+}
+
+/* Botón */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Enlaces */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #5b21b6;
+}
+
+.login-wrapper {
+  padding-top: 100px;
+  /* espacio para que el login no quede debajo del navbar */
+}

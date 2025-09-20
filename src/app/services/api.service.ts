@@ -42,10 +42,28 @@ export class ApiService {
   actualizarProducto(id_producto: number, producto: FormData) {
     return this.http.put(`${this.apiUrl}/producto/${id_producto}`, producto);
   }
+
   // --- Login ---
   login(data: { email_usuario: string; password_usuario: string }): Observable<any> {
     return this.http.post<any>(this.authUrl, data, {
-      headers: { 'Content-Type': 'application/json' } // importante
+      headers: { 'Content-Type': 'application/json' }
     });
+  }
+
+  // --- Manejo del token ---
+  saveToken(token: string) {
+    localStorage.setItem('token', token);
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.getToken();
   }
 }

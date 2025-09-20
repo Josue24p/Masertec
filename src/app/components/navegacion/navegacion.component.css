@@ -26,3 +26,8 @@
     background-color: #fff; /* Icono del botón */
   }
   
+  .navbar {
+  position: relative;   /* o fixed si quieres que quede siempre arriba */
+  z-index: 1000;        /* prioridad sobre el login */
+  background-color: #0f172a; /* azul oscuro elegante, evita transparencia */
+}

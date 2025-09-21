@@ -27,7 +27,8 @@
   }
   
   .navbar {
-  position: relative;   /* o fixed si quieres que quede siempre arriba */
-  z-index: 1000;        /* prioridad sobre el login */
-  background-color: #0f172a; /* azul oscuro elegante, evita transparencia */
-}
+    position: sticky; /* o fixed si quieres que siempre esté visible */
+    top: 0;
+    z-index: 2000; /* más alto que otros elementos */
+    background-color: #0f172a;
+  }

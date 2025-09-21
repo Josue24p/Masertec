@@ -14,7 +14,7 @@ import { RelojesComponent } from './components/relojes/relojes.component';
 import { LectorasComponent } from './components/lectoras/lectoras.component';
 import { SistemasVersionesComponent } from './components/sistemas-versiones/sistemas-versiones.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { AdminListarComponent } from './components/admin-listar/admin-listar.component';
+import { AdminListarComponent } from './components/admin-prod/admin-listar.component';
 import { LoginComponent } from './components/login/login.component';
 import { Component } from '@angular/core';
 import { ContactanosComponent } from './components/contactanos/contactanos.component';

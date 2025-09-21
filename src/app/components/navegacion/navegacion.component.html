@@ -1,54 +1,81 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #27272c; border-bottom: 4px solid #ec740b;">
-    <div class="container-fluid">
-      <a class="navbar-brand">
-        <img src="https://masertecperu.com/imagenes/LOGO_MASERTE%20white.png" alt="Logo de la empresa" class="logo-img">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="https://masertecperu.com/imagenes/LOGO_MASERTE%20white.png" alt="Logo de la empresa" class="logo-img">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+
+        <!-- Navbar para usuarios normales -->
+        @if (!isAdmin) {
           <li class="nav-item">
-            <a class="nav-link active" href="/" style="color: #f0f1ec;">
-              <i class="fas fa-home"></i> Home
-            </a>
+            <a class="nav-link" routerLink="/" style="color: #f0f1ec; cursor:pointer;"><i class="fas fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/servicios" style="color: #ECF0F1;">
-              <i class="fas fa-concierge-bell"></i> Servicios
-            </a>
+            <a class="nav-link" routerLink="/servicios" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-concierge-bell"></i> Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/product" style="color: #ECF0F1;">
-              <i class="fas fa-box"></i> Productos
-            </a>
+            <a class="nav-link" routerLink="/product" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-box"></i> Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/accesorio" style="color: #ECF0F1;">
-              <i class="fas fa-headphones-alt"></i> Accesorios
-            </a>
+            <a class="nav-link" routerLink="/accesorio" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-headphones-alt"></i> Accesorios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/sistema" style="color: #ECF0F1;">
-              <i class="fas fa-cogs"></i> Sistemas
-            </a>
+            <a class="nav-link" routerLink="/sistema" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-cogs"></i> Sistemas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/soporte" style="color: #ECF0F1;">
-              <i class="fas fa-tools"></i> Soporte
-            </a>
+            <a class="nav-link" routerLink="/soporte" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-tools"></i> Soporte</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contacto" style="color: #ECF0F1;">
-              <i class="fas fa-envelope"></i> Contacto
-            </a>
+            <a class="nav-link" routerLink="/contacto" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-envelope"></i> Contacto</a>
+          </li>
+        }
+
+        <!-- Navbar para admin -->
+        @if (isAdmin) {
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-box"></i> Panel</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/acces" style="color: #ECF0F1;">
-              <i class="fas fa-user"></i> Login
-            </a>
+            <a class="nav-link" routerLink="/adminlistar" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-box"></i> Productos</a>
           </li>
-        </ul>
-      </div>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/contacto" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-envelope"></i> Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/usuarios" style="color: #ECF0F1; cursor:pointer;"><i class="fas fa-users"></i> Usuarios</a>
+          </li>
+        }
+
+                  <!-- Login si no está logueado -->
+          @if (!isLoggedIn) {
+            <li class="nav-item">
+              <a 
+                class="nav-link" 
+                routerLink="/acces" 
+                routerLinkActive="active" 
+                style="color: #ECF0F1; cursor:pointer;">
+                <i class="fas fa-user"></i> Login
+              </a>
+            </li>
+          }
+
+          <!-- Logout si está logueado -->
+          @if (isLoggedIn) {
+            <li class="nav-item">
+              <a 
+                class="nav-link" 
+                (click)="logout()" 
+                style="color: #ECF0F1; cursor:pointer;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </li>
+          }
+
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

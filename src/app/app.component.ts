@@ -11,13 +11,13 @@ import { ApiService } from './services/api.service';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent /*implements OnInit*/ {
   title = 'masertec';
   serverMessage = '';
 
   constructor(private apiService: ApiService) {}
 
-  ngOnInit() {
+  /*ngOnInit() {
     this.apiService.getServerStatus().subscribe(
       response => {
         console.log('Respuesta del servidor:', response);
@@ -27,6 +27,6 @@ export class AppComponent implements OnInit {
         console.error('Error obteniendo el estado del servidor:', error);
       }
     );
-  }
+  }*/
   
 }

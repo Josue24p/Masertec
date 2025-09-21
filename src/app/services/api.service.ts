@@ -11,10 +11,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  // --- Estado del servidor ---
-  getServerStatus(): Observable<string> {
+  // --- Estado del servidor 
+  /*getServerStatus(): Observable<string> {
     return this.http.get(this.apiUrl, { responseType: 'text' });
-  }
+  }*/
 
   // --- Contactos ---
   getContactos(): Observable<any[]> {

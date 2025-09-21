@@ -1,0 +1,114 @@
+<div class="d-flex justify-content-center align-items-start" style="min-height: 70vh;">
+  <div class="container mt-4" style="max-width: 1000px;">
+    <h2 class="text-center mb-4">📨 Bandeja de Contactos</h2>
+
+    <!-- Barra de búsqueda 
+    <div class="row mb-3">
+      <div class="col-md-6 mx-auto">
+        <input type="text" class="form-control" placeholder="🔍 Buscar contacto..." [(ngModel)]="filtro" />
+      </div>
+    </div>-->
+
+    <!-- Tabla de contactos -->
+    <div class="table-responsive shadow rounded">
+      <table class="table table-hover align-middle text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Mensaje</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (contacto of contactos | filter: filtro; track contacto) {
+          <tr>
+            <td>{{ contacto.nombre_contacto }}</td>
+            <td>{{ contacto.correo_contacto }}</td>
+            <td>{{ contacto.telefono_contacto }}</td>
+            <td class="text-truncate" style="max-width: 200px">
+              {{ contacto.mensaje_contacto }}
+            </td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="seleccionarContacto(contacto)" data-bs-toggle="modal"
+                data-bs-target="#modalResponder">
+                ✉️ Responder
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal para responder -->
+    <div class="modal fade" id="modalResponder" tabindex="-1" aria-labelledby="modalResponderLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0 rounded-4">
+          <!-- Encabezado -->
+          <div class="modal-header bg-gradient bg-primary text-white rounded-top-4">
+            <h5 class="modal-title fw-bold d-flex align-items-center" id="modalResponderLabel">
+              <i class="bi bi-envelope-paper me-2"></i> Responder a Contacto
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+
+          <!-- Cuerpo -->
+          <div class="modal-body p-4">
+            <form (ngSubmit)="enviarMensaje()">
+              <!-- 📧 Mostrar destinatario -->
+              <div class="alert alert-info d-flex align-items-center shadow-sm mb-4">
+                <i class="bi bi-person-check me-2 fs-5"></i>
+                <div>
+                  <div class="fw-semibold">Correo destinatario:</div>
+                  <div class="text-dark">{{ mensaje.correo || 'No seleccionado' }}</div>
+                </div>
+              </div>
+
+              <!-- Asunto -->
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Asunto</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light">
+                    <i class="bi bi-chat-dots text-primary"></i>
+                  </span>
+                  <input type="text" class="form-control shadow-sm" [(ngModel)]="mensaje.asunto" name="asunto"
+                    placeholder="Escribe el asunto aquí..." required />
+                </div>
+              </div>
+
+              <!-- Mensaje -->
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Mensaje</label>
+                <textarea class="form-control shadow-sm" rows="6" [(ngModel)]="mensaje.cuerpo" name="cuerpo"
+                  placeholder="Escribe el mensaje que deseas enviar..." required></textarea>
+              </div>
+
+              <!-- Mensajes de estado -->
+              <div *ngIf="errorMsg" class="alert alert-danger py-2 px-3 shadow-sm">
+                ❌ {{ errorMsg }}
+              </div>
+              <div *ngIf="enviado" class="alert alert-success py-2 px-3 shadow-sm">
+                ✅ Mensaje enviado con éxito.
+              </div>
+
+              <!-- Footer -->
+              <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-light border shadow-sm" data-bs-dismiss="modal">
+                  ❌ Cancelar
+                </button>
+                <button type="submit" class="btn btn-success shadow-sm px-4" [disabled]="enviando">
+                  {{ enviando ? '⏳ Enviando...' : '📨 Enviar Respuesta' }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

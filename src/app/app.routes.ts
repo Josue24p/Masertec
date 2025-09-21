@@ -17,7 +17,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminListarComponent } from './components/admin-prod/admin-listar.component';
 import { LoginComponent } from './components/login/login.component';
 import { Component } from '@angular/core';
-import { ContactanosComponent } from './components/contactanos/contactanos.component';
+import { ContactanosComponent } from './components/admin-contac/contactanos.component';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [

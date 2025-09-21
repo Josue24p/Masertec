@@ -24,6 +24,11 @@ export class ApiService {
   enviarContacto(contactData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/contacto`, contactData);
   }
+  
+  enviarCorreoContacto(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/contacto/enviar-correo`, data);
+  }
+  
 
   // --- Categorías ---
   getCategorias(): Observable<any[]> {

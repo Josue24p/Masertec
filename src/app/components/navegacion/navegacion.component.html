@@ -50,30 +50,7 @@
           </li>
         }
 
-                  <!-- Login si no está logueado -->
-          @if (!isLoggedIn) {
-            <li class="nav-item">
-              <a 
-                class="nav-link" 
-                routerLink="/acces" 
-                routerLinkActive="active" 
-                style="color: #ECF0F1; cursor:pointer;">
-                <i class="fas fa-user"></i> Login
-              </a>
-            </li>
-          }
-
-          <!-- Logout si está logueado -->
-          @if (isLoggedIn) {
-            <li class="nav-item">
-              <a 
-                class="nav-link" 
-                (click)="logout()" 
-                style="color: #ECF0F1; cursor:pointer;">
-                <i class="fas fa-sign-out-alt"></i> Logout
-              </a>
-            </li>
-          }
+    
 
       </ul>
     </div>

@@ -88,3 +88,14 @@
   transform: scale(0.98); /* Efecto de "presión" */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reducir la sombra */
 }
+
+
+.card img {
+  width: 100%;         /* Ocupará todo el ancho del bloque */
+  max-width: 250px;    /* 👈 fuerza un ancho máximo uniforme */
+  height: 220px;       /* Alto fijo */
+  object-fit: cover;   /* Ajusta sin deformar */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;      /* Centra la imagen en la tarjeta */
+}

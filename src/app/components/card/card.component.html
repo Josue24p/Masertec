@@ -4,12 +4,14 @@
   <p>
     @for (line of text.split('\n'); track line; let i = $index) {
       <span>
-        {{ line }}@if (i < text.split('\n').length - 1) {
-        <br>
+        {{ line }}
+        @if (i < text.split('\n').length - 1) {
+          <br />
         }
       </span>
     }
   </p>
+
   @if (showButton) {
     <button (click)="onButtonClick()">{{ buttonText }}</button>
   }

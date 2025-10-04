@@ -1,53 +1,58 @@
-<div class="card">
+<div class="card welcome-card">
   <div class="cont-img">
-    <img src="https://masertecperu.com/imagenes/bienvenido.png" class="card-img-top" alt="Bienvenidos a Masertec">
+    <img src="https://masertecperu.com/imagenes/bienvenido.png" alt="Bienvenidos a Masertec">
   </div>
   <div class="cont-text">
-    <h5 class="card-title">MASERTEC SAC</h5>
+    <h2>MASERTEC SAC</h2>
     <p>
       Somos una empresa peruana formada en el año 2002, cuyo giro comercial principal es identificar al personal,
       mediante el servicio de fotochecks, siendo confiable en la confección de documentos de identificación de alta
-      seguridad, mostrándole nuestra mejorada línea de identificación, contando para este fin con personal altamente
-      calificado y maquinaria de alta tecnología industrial.
+      seguridad. Contamos con personal altamente calificado y maquinaria de alta tecnología industrial.
     </p>
   </div>
 </div>
 
-<div class="cont-card">
-  <app-card title="Fotochecks" imageUrl="https://masertecperu.com/imagenes/fotocheck.png"
-    text="Nuestro servicio de impresión de fotochecks incluye la elaboración del diseño y sesión fotográfica al personal en sus propias instalaciones sin costo adicional."
-    buttonText="Ver Fotochecks"
-    [showButton]="true"
-    route="/servicios"
-    >
-  </app-card>
+<!-- Vista de Categorías -->
+<div *ngIf="!categoriaSeleccionada" class="section">
 
-  <app-card title="Productos" imageUrl="https://masertecperu.com/imagenes/productosindex.png"
-    text="Ofrecemos productos de calidad para su empresa satisfaciendo las necesidades que usted requiere, contamos con impresoras de etiquetas termicas, impresoras de pvc, softwares y mucho mas."
-    buttonText="Ver Productos"
-    [showButton]="true"
-    route="/product">
-  </app-card>
+  <div class="cont-card">
+    <app-card *ngFor="let categoria of categorias"
+      [title]="categoria.cat_nombre"
+      [imageUrl]="'https://masertecperu.com/api/uploads/' + categoria.cat_imagen"
+      [text]="categoria.cat_descripcion"
+      buttonText="Ver más"
+      [showButton]="true"
+      (verMas)="seleccionarCategoria(categoria)">
+    </app-card>
+  </div>
+</div>
 
-  <app-card title="Accesorios" imageUrl="https://masertecperu.com/imagenes/accesorios.png"
-    text="Contamos con una gama diversa de accesorios de fotochecks tales como portafotochecks, cintas, micas, yoyos retractiles."
-    buttonText="Ver Accesorios"
-    [showButton]="true"
-    route="/accesorio">
-  </app-card>
+<!-- Vista de Subcategorías -->
+<div *ngIf="categoriaSeleccionada && !subcategoriaSeleccionada" class="section">
 
-  <app-card title="Sistemas" imageUrl="https://masertecperu.com/imagenes/sacop.png"
-    text="SACOP Ha sido desarrollado para brindar un efectivo control sobre la asistencia de su personal, en información referida a horas extras, tardanzas, permisos,entre otros."
-    buttonText="Ver Sistema"
-    [showButton]="true"
-    route="/sistema">
-  </app-card>
+  <div class="cont-card">
+    <app-card *ngFor="let sub of subcategorias"
+      [title]="sub.subcat_nombre"
+      [imageUrl]="'https://masertecperu.com/api/uploads/' + sub.subcat_imagen"
+      [text]="sub.subcat_descripcion"
+      buttonText="Ver productos"
+      [showButton]="true"
+      (verMas)="seleccionarSubcategoria(sub)">
+    </app-card>
+  </div>
+  <button class="back-btn" (click)="volverACategorias()">⬅ Volver a Categorías</button>
+</div>
 
-  <app-card title="Soporte" imageUrl="https://masertecperu.com/imagenes/servtec.png"
-    text="Nuestro equipo de SERVICIO TÉCNICO está conformado por Ingenieros y Técnicos quienes se encuentran a su disposición de manera exclusiva para garantizarle un servicio de calidad."
-    buttonText="Ver Soporte"
-    [showButton]="true"
-    route="/soporte">
-  </app-card>
+<!-- Vista de Productos -->
+<div *ngIf="subcategoriaSeleccionada" class="section">
 
+  <div class="cont-card">
+    <app-card *ngFor="let producto of productos"
+      [title]="producto.prod_nombre"
+      [imageUrl]="'https://masertecperu.com/api/uploads/' + producto.prod_image"
+      [text]="producto.prod_descripcion"
+      [showButton]="false">
+    </app-card>
+  </div>
+  <button class="back-btn" (click)="volverASubcategorias()">⬅ Volver a Subcategorías</button>
 </div>

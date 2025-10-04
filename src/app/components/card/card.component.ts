@@ -1,11 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-card',
-    imports: [],
-    templateUrl: './card.component.html',
-    styleUrl: './card.component.css'
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent {
   @Input() title!: string;
@@ -13,19 +12,24 @@ export class CardComponent {
   @Input() text!: string;
   @Input() buttonText: string = 'Ver más';
   @Input() showButton: boolean = false;
-  @Input() route?: string; // Nueva propiedad para la ruta
-  @Input() externaUrl?: string; // Nueva propiedad para enlaces externos
+  @Input() route?: string; // Ruta interna
+  @Input() externaUrl?: string; // Enlace externo
 
-  constructor(private router: Router) { }
+  @Output() verMas = new EventEmitter<void>();
+
+  constructor(private router: Router) {}
 
   onButtonClick() {
+    console.log('Card onButtonClick →', { title: this.title, route: this.route, externaUrl: this.externaUrl });
     if (this.externaUrl) {
-      // Redirigir a una pestaña externa
-      window.open(this.externaUrl); // Abre en una pestaña nueva
+      window.open(this.externaUrl, '_blank');
+      return;
     }
     if (this.route) {
-      // Redirigir internamente usando el router de Angular
-      this.router.navigate([this.route])
+      this.router.navigate([this.route]);
+      return;
     }
+    // emitir evento al padre
+    this.verMas.emit();
   }
 }

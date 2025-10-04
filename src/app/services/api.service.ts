@@ -51,6 +51,8 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}/categoria/${id_categoria}`);
   }
 
+
+
   // --- Subcategorías ---
   getSubcategorias(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/subcategorias`);
@@ -72,6 +74,10 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}/subcategorias/${id_subcategoria}`);
   }
 
+  getSubcategoriasByCategoria(id_categoria: number): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/subcategorias/categoria/${id_categoria}`);
+  }
+
   // --- Productos ---
   getProductos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/producto`);
@@ -91,6 +97,11 @@ export class ApiService {
 
   getProducto(id_producto: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/producto/${id_producto}`);
+  }
+
+  // --- Productos por subcategoría ---
+  getProductosBySubcategoria(id_subcategoria: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/producto/subcategoria/${id_subcategoria}`);
   }
 
   // --- Login ---

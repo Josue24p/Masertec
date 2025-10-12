@@ -2,12 +2,13 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-listar',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, NgxPaginationModule],
   templateUrl: './admin-listar.component.html',
   styleUrls: ['./admin-listar.component.css']
 })
@@ -55,7 +56,8 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
   constructor(private ApiService: ApiService) { }
 
   ngOnInit(): void {
-    this.cargarSubcategorias();
+
+    this.cargarSubcategoriasPaginadas();
     this.cargarProductos();
     this.cargarCategorias();
   }
@@ -67,15 +69,25 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // =============================
-  // 📌 PRODUCTOS
-  // =============================
-  cargarProductos(): void {
-    this.ApiService.getProductos().subscribe(
-      data => this.productos = data,
-      error => console.error('Error al obtener productos', error)
+  // ======================================
+  // 📄 Cargar productos con paginación
+  // ======================================
+  paginaActual: number = 1;
+  totalPaginas: number = 1;
+  limiteProductos: number = 5;
+  cargarProductos(page: number = 1): void {
+    this.ApiService.getProductos(page, this.limiteProductos).subscribe(
+      (res) => {
+        // Si el backend devuelve { data, pagination }
+        this.productos = res.data || res;
+        this.totalPaginas = res.pagination?.totalPages || 1;
+        this.paginaActual = res.pagination?.currentPage || page;
+      },
+      (error) => console.error('Error al obtener productos', error)
     );
   }
+
+
 
   onFileSelected(event: any) {
     this.imagenSeleccionada = event.target.files[0];
@@ -172,6 +184,10 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
       producto => this.productos = [producto],
       () => Swal.fire('Error', 'Producto no encontrado', 'error')
     );
+  }
+  cambiarPagina(page: number): void {
+    if (page < 1 || page > this.totalPaginas) return;
+    this.cargarProductos(page);
   }
 
   // =============================
@@ -271,9 +287,42 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
     this.categoriaSeleccionada = null;
   }
 
-  // =============================
-  // 📌 SUBCATEGORÍAS
-  // =============================
+  // ======================================
+  // 📄 Paginación de Subcategorías
+  // ======================================
+  paginaActualSub: number = 1;
+  totalPaginasSub: number = 1;
+
+
+  cargarSubcategoriasPaginadas(page: number = 1): void {
+    // 🔹 Verificamos que las categorías estén listas antes de continuar
+    if (!this.categorias || this.categorias.length === 0) {
+      this.ApiService.getCategorias().subscribe(
+        data => {
+          this.categorias = data;
+          this.cargarSubcategoriasPaginadas(page); // vuelve a llamar ya con categorías listas
+        },
+        error => console.error('Error al obtener categorías', error)
+      );
+      return;
+    }
+
+    this.ApiService.getSubcategoriasPaginadas(page, 5).subscribe(
+      (res) => {
+        // Estructura de la respuesta: { data: [], pagination: {...} }
+        this.subcategorias = (res.data || []).map((sub: any) => ({
+          ...sub,
+          cat_nombre: this.categorias.find(cat => cat.id_categoria === sub.id_categoria)?.cat_nombre || 'Sin categoría'
+        }));
+
+        this.totalPaginasSub = res.pagination?.totalPages || 1;
+        this.paginaActualSub = res.pagination?.currentPage || page;
+      },
+      (error) => console.error('Error al obtener subcategorías paginadas', error)
+    );
+  }
+
+
   cargarSubcategorias(): void {
     // Primero asegurarse de que categorías estén cargadas
     if (!this.categorias || this.categorias.length === 0) {
@@ -312,7 +361,7 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
     this.ApiService.crearSubcategoria(formData).subscribe(
       () => {
         Swal.fire('Éxito', 'Subcategoría registrada con éxito', 'success');
-        this.cargarSubcategorias();
+        this.cargarSubcategoriasPaginadas(this.paginaActualSub);
         this.limpiarSubcategoria();
       },
       (error) => {
@@ -346,7 +395,7 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
     this.ApiService.actualizarSubcategoria(this.subcategoriaSeleccionada.id_subcategoria, formData).subscribe(
       () => {
         Swal.fire('¡Actualizado!', 'Subcategoría actualizada con éxito', 'success')
-          .then(() => this.cargarSubcategorias());
+          .then(() => this.cargarSubcategoriasPaginadas(this.paginaActualSub));
         this.limpiarSubcategoria();
       },
       (error) => {
@@ -369,7 +418,7 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
         this.ApiService.eliminarSubcategoria(id).subscribe(
           () => {
             Swal.fire('¡Eliminada!', 'La subcategoría ha sido eliminada.', 'success');
-            this.cargarSubcategorias();
+            this.cargarSubcategoriasPaginadas(this.paginaActualSub);
           },
           () => Swal.fire('Error', 'No se pudo eliminar la subcategoría', 'error')
         );
@@ -394,4 +443,11 @@ export class AdminListarComponent implements OnInit, AfterViewInit {
     this.editandoSubcategoria = false;
     this.subcategoriaSeleccionada = null;
   }
+
+  // 🔹 Cambiar de página
+  cambiarPaginaSub(page: number): void {
+    if (page < 1 || page > this.totalPaginasSub) return;
+    this.cargarSubcategoriasPaginadas(page);
+  }
+
 }

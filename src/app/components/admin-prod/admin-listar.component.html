@@ -71,7 +71,7 @@
 
 
     <!-- Columna Central (CRUD y Registro de Producto) -->
-    <div class="col-md-8">
+    <div class="col-md-7">
       <!-- Registro de Producto -->
       <section class="product-form card shadow-sm p-4 mb-5">
         <h2 class="mb-4">Registrar Producto</h2>
@@ -148,7 +148,7 @@
         <!-- Tabla Responsive -->
         <div class="table-responsive">
           <table class="table align-middle table-striped table-hover">
-            <thead class="table-dark">
+            <thead class="table-dark text-center">
               <tr>
                 <th>Código</th>
                 <th>Nombre</th>
@@ -159,7 +159,7 @@
                 <th>Acciones</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="text-center">
               @for (producto of productos; track producto) {
               <tr>
                 <td>{{ producto.id_producto }}</td>
@@ -169,10 +169,11 @@
                 <td>{{ producto.subcat_nombre }}</td>
                 <td>
                   <img [src]="
-                      producto.prod_image
-                        ? 'https://masertecperu.com/api/uploads/' + producto.prod_image
-                        : 'https://via.placeholder.com/50'
-                    " alt="{{ producto.prod_nombre }}" class="img-thumbnail" width="80" />
+                producto.prod_image
+                  ? 'https://masertecperu.com/api/uploads/' + producto.prod_image
+                  : 'https://via.placeholder.com/50'
+              " alt="{{ producto.prod_nombre }}" class="img-thumbnail" width="80" height="80"
+                    style="object-fit: cover; border-radius: 8px" />
                 </td>
                 <td>
                   <button (click)="editarProducto(producto)" class="btn btn-sm btn-outline-success me-1">
@@ -187,11 +188,28 @@
             </tbody>
           </table>
         </div>
+
+        <!-- 🔹 Paginación igual que Subcategorías -->
+        <div class="d-flex justify-content-center align-items-center mt-3">
+          <button class="btn btn-outline-primary btn-sm me-2" [disabled]="paginaActual <= 1"
+            (click)="cambiarPagina(paginaActual - 1)">
+            ⬅️ Anterior
+          </button>
+
+          <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+
+          <button class="btn btn-outline-primary btn-sm ms-2" [disabled]="paginaActual >= totalPaginas"
+            (click)="cambiarPagina(paginaActual + 1)">
+            Siguiente ➡️
+          </button>
+        </div>
+
       </section>
+
     </div>
 
     <!-- Columna Derecha (B2) -->
-    <div class="col-md-2">
+    <div class="col-md-3">
       <!-- B2-1: Registrar Sub-Categoría -->
       <div class="card shadow-sm p-3 mb-4" id="b2-1">
         <h5>Registrar Sub-Categoría</h5>
@@ -237,17 +255,19 @@
       <!-- B2-2: Lista de Sub-Categorías -->
       <div class="card shadow-sm p-3" id="b2-2">
         <h5>Lista de Sub-Categorías</h5>
+
         <table class="table table-sm table-striped mt-2">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Categoria</th>
+              <th>Categoría</th>
               <th class="text-end">Acciones</th>
             </tr>
           </thead>
+
           <tbody>
             <tr *ngFor="let sub of subcategorias">
-              <td>{{ sub.id_subcategoria}}</td>
+              <td>{{ sub.id_subcategoria }}</td>
               <td>
                 <div>{{ sub.cat_nombre }}</div>
                 <div class="text-muted" style="font-size: 0.85em;">{{ sub.subcat_nombre }}</div>
@@ -259,12 +279,24 @@
                   (click)="eliminarSubcategoria(sub.id_subcategoria)" title="Eliminar">🗑️</button>
               </td>
             </tr>
-
           </tbody>
         </table>
+
+        <div class="d-flex justify-content-center align-items-center mt-3">
+          <button class="btn btn-outline-primary btn-sm me-2" [disabled]="paginaActualSub <= 1"
+            (click)="cambiarPaginaSub(paginaActualSub - 1)">
+            ⬅️ Anterior
+          </button>
+
+          <span>Página {{ paginaActualSub }} de {{ totalPaginasSub }}</span>
+
+          <button class="btn btn-outline-primary btn-sm ms-2" [disabled]="paginaActualSub >= totalPaginasSub"
+            (click)="cambiarPaginaSub(paginaActualSub + 1)">
+            Siguiente ➡️
+          </button>
+        </div>
       </div>
+
+
     </div>
-
-
   </div>
-</div>

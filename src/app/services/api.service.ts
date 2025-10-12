@@ -24,11 +24,11 @@ export class ApiService {
   enviarContacto(contactData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/contacto`, contactData);
   }
-  
+
   enviarCorreoContacto(data: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/contacto/enviar-correo`, data);
   }
-  
+
 
   // --- Categorías ---
   getCategorias(): Observable<any[]> {
@@ -58,6 +58,10 @@ export class ApiService {
     return this.http.get<any[]>(`${this.apiUrl}/subcategorias`);
   }
 
+  getSubcategoriasPaginadas(page: number, limit: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/subcategorias?page=${page}&limit=${limit}`);
+  }
+
   crearSubcategoria(subcategoria: FormData): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/subcategorias`, subcategoria);
   }
@@ -75,12 +79,13 @@ export class ApiService {
   }
 
   getSubcategoriasByCategoria(id_categoria: number): Observable<any[]> {
-  return this.http.get<any[]>(`${this.apiUrl}/subcategorias/categoria/${id_categoria}`);
+    return this.http.get<any[]>(`${this.apiUrl}/subcategorias/categoria/${id_categoria}`);
   }
 
-  // --- Productos ---
-  getProductos(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/producto`);
+
+  // --- Productos con paginación ---
+  getProductos(page: number = 1, limit: number = 5): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/producto?page=${page}&limit=${limit}`);
   }
 
   crearProducto(producto: FormData): Observable<any> {
@@ -99,10 +104,11 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}/producto/${id_producto}`);
   }
 
-  // --- Productos por subcategoría ---
-  getProductosBySubcategoria(id_subcategoria: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/producto/subcategoria/${id_subcategoria}`);
+  // --- Productos por subcategoría con paginación ---
+  getProductosBySubcategoria(id_subcategoria: number, page: number = 1, limit: number = 5): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/producto/subcategoria/${id_subcategoria}`);
   }
+
 
   // --- Login ---
   login(data: { email_usuario: string; password_usuario: string }): Observable<any> {
